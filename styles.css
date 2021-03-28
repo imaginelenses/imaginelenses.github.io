@@ -1,0 +1,58 @@
+main
+{
+    margin: 4%;
+    margin-top: 0%;
+}
+
+nav
+{
+    min-height: 100px;
+}
+
+.navbar-brand
+{
+    padding-left: 4%;
+    font-size: 200%;
+    letter-spacing: 2px;
+}
+
+#navbarSupportedContent
+{
+    padding-right: 4%;
+    font-size: 95%;
+}
+
+.strip
+{
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+
+.strip-title
+{
+    font-size: 4rem;
+}
+
+footer
+{
+    margin-bottom: 4%;
+}
+
+img
+{
+    height: inherit;
+    width: inherit;
+}
+
+@media only screen and (max-device-width: 1366px)
+{
+    .row
+    {
+        display: block;
+    }
+
+    img
+    {
+        width: 90vw;
+    }
+}

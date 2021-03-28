@@ -1,0 +1,13 @@
+#contact-image
+{
+    height: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (max-device-width: 1366px)
+{
+    #contact-image
+    {
+        margin-left: -11px;
+    }
+}

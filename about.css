@@ -1,0 +1,29 @@
+.me
+{
+    text-decoration: underline;
+    color: black;
+}
+
+.me:hover
+{
+    color: black;
+}
+
+.contact
+{
+    color: black;
+}
+
+#about-image
+{
+    height: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (max-device-width: 1366px)
+{
+    #about-image
+    {
+        margin-left: -11px;
+    }
+}

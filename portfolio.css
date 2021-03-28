@@ -1,0 +1,36 @@
+main
+{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.thumbnail
+{
+    width: inherit;
+    height: 150px;
+    object-fit: cover;
+}
+
+@media (min-width: 576px)
+{
+    .modal-dialog {
+        max-width: fit-content;
+        margin: 1.75rem auto;
+    }
+}
+
+.fullscreen
+{
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+@media only screen and (max-device-width: 1366px)
+{
+  .thumbnail
+  {
+      width: inherit;
+  }
+}
+
+

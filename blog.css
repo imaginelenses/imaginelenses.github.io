@@ -1,0 +1,25 @@
+main
+{
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+.card-title
+{
+    padding-right: 3%;
+    padding-left: 3%
+}
+
+.blockquote
+{
+    padding-right: 3%;
+    padding-left: 3%
+}
+
+@media only screen and (max-device-width: 1366px)
+{
+    main
+    {
+        margin: 3%;
+    }
+}
