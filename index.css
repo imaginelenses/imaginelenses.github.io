@@ -1,34 +1,5 @@
-#carouselControls
-{
-    width: 90vw;
-}
-
-.carousel-inner
-{
-    height: 800px;
-    width: 98.5vw;
-    margin-right: -4%;
-    margin-left: -4%;
-}
-
-.carousel-control-prev
-{
-    height: inherit;
-}
-
-.carousel-control-next
-{
-    height: inherit;
-}
-
-#quote
-{
-    padding-top: 15%;
-}
-
 /* Code from https://www.w3schools.com/howto/howto_css_parallax.asp */
-#parallax
-{
+#parallax {
     /* The image used */
     background-image: url("/media/parallax.jpg");
 
@@ -42,32 +13,15 @@
     background-size: cover;
 }
 
-.fb-share
-{
-    padding-right: 2px;
+.fb-page {
+    width: 100% !important;
 }
 
+@media only screen and (max-device-width: 1380px) {
 
-@media only screen and (max-device-width: 1366px)
-{
-    #carouselControls
-    {
-        height: 170px;
+    .fb-page {
+        display: none !important;
     }
 
-    .carousel-inner
-    {
-        height: inherit;
-    }
-
-    #parallax
-    {
-        background-attachment: scroll;
-    }
-
-    #quote-image
-    {
-        margin-left: -11px;
-    }
 }
 

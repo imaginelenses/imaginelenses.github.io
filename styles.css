@@ -1,58 +1,32 @@
-main
-{
+main {
     margin: 4%;
     margin-top: 0%;
 }
 
-nav
-{
+nav {
     min-height: 100px;
 }
 
-.navbar-brand
-{
+.navbar-brand {
     padding-left: 4%;
     font-size: 200%;
     letter-spacing: 2px;
 }
 
-#navbarSupportedContent
-{
+#navbarSupportedContent {
     padding-right: 4%;
     font-size: 95%;
 }
 
-.strip
-{
+.strip {
     margin-top: 8%;
     margin-bottom: 8%;
 }
 
-.strip-title
-{
+.strip-title {
     font-size: 4rem;
 }
 
-footer
-{
+footer {
     margin-bottom: 4%;
-}
-
-img
-{
-    height: inherit;
-    width: inherit;
-}
-
-@media only screen and (max-device-width: 1366px)
-{
-    .row
-    {
-        display: block;
-    }
-
-    img
-    {
-        width: 90vw;
-    }
 }
