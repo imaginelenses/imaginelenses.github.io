@@ -1,0 +1,117 @@
+---
+layout: 'base.html'
+title: 'Projects'
+tags: 'nav'
+order: 2
+css: ['/css/projects.css', '/css/lite-yt-embed.css']
+---
+
+{% set js %}
+<img class="techIcon js" width="512" alt="JavaScript Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/512px-JavaScript-logo.png">JavaScript
+{% endset %}
+
+{% set react %}
+{% link "https://reactjs.org/", "React" %} ({{ js | safe }})
+{% endset %}
+
+{% set reactNative %}
+{% link "https://reactnative.dev/", "React Native" %} ({{ js | safe }})
+{% endset %}
+
+{% set html %}
+<img class="techIcon html5" alt="HTML5 Logo" title="HTML5 Logo" src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png">HTML5/CSS
+{% endset %}
+
+{% set python %}
+{% link "https://www.python.org/", "Python" %}
+{% endset %}
+
+{% set flask %}
+{% link "https://flask.palletsprojects.com/en/2.2.x/", "Flask" %} ({{ python | safe }})
+{% endset %}
+
+{% set java %}
+{% link "https://www.java.com/en/", "Java" %}
+{% endset %}
+
+{% set c %}
+<img class="techIcon" alt="C Logo" src="https://img.icons8.com/color/48/null/c-programming.png"/>C
+{% endset %}
+
+<div class="content">
+  <h2>
+    <div class="projectTitleContainer">
+      <div class="projectTitle">
+        {{ collections.projects | length }} Projects
+      </div>
+      <div class="date">
+        <a class="github-button" href="https://github.com/imaginelenses" data-color-scheme="no-preference: light; light: light; dark: light;" data-size="large" data-show-count="true" aria-label="Follow @imaginelenses on GitHub">Follow</a>
+      </div>
+    </div>
+  </h2>
+  
+  <ol reversed>
+    {% for project in collections.projects | reverse %}
+      <li>
+        <h4><a href="#{{ project.data.title | slugify }}">{{ project.data.title }}</a></h4>
+      </li>
+    {% endfor %}
+  </ol>
+
+  {% for project in collections.projects | reverse %}
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">{% title project.data.title %}</div>
+        <div class="date">{{ project.data.when }}</div>
+      </div>
+    </h2>
+    
+    {{ project.templateContent | safe }}
+
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      {% set len = (project.data.techStack | length) %}
+      {% for tech in project.data.techStack %}        
+        {% if tech == 'html' %}
+          {{ html | safe}}
+        {% elif tech == 'python' %}
+          {{ python | safe}}
+        {% elif tech == 'flask' %}
+          {{ flask | safe}}
+        {% elif tech == 'js' %}
+          {{ js | safe}}
+        {% elif tech == 'react' %}
+          {{ react | safe}}
+        {% elif tech == 'reactNative' %}
+          {{ reactNative | safe}}
+        {% elif tech == 'java' %}
+          {{ java | safe}}
+        {% elif tech == 'c' %}
+          {{ c | safe}}
+        {% elif tech | isString %}
+          {{ tech }}
+        {% else %}
+          {% for name, link in tech %}
+            {% link link, name %}
+          {% endfor %}
+        {% endif %}
+        
+        {% if loop.index < len %}
+          |
+        {% endif %}
+      {% endfor %}
+    </p>
+
+    {% if project.data.source %}
+      <p>
+        <a href="{{ project.data.source }}" target="_blank">...view source code.</a>
+      </p>
+    {% endif %}
+
+    <br>
+  {% endfor %}
+
+</div>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script async defer src="/js/lite-yt-embed.js"></script>

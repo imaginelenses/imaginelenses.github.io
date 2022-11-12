@@ -1,0 +1,49 @@
+.tag {
+    --spacer: 2px;
+    margin-right: var(--spacer);
+    margin-left: var(--spacer);
+    padding: 3px 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: var(--bs-gray);
+    color: var(--bs-gray);
+    font-size: small;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.tag:hover {
+    text-decoration: none;
+    color: white;
+    background-color: var(--bs-gray-600);
+}
+
+.prev, .next {
+    position: absolute;
+    width: 50%;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--bs-gray-800);    
+    
+    a {
+        font-size: large;
+
+        div {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+    text-align: end;
+}

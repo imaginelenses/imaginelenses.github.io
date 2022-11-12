@@ -1,0 +1,47 @@
+---
+layout: 'base.html'
+css: ['/css/blog.css']
+---
+
+<div class="content">
+  <h1 class="title">{{ title }}</h1>
+  
+  <div class="contained mb-5">
+    <time datetime="{{ page.date | htmlDate }}" class="me-2">{{ page.date | date }}</time>
+    {% for tag in tags | filterTags %}
+      {% set tagUrl %}/tags/{{ tag | slugify }}{% endset %}
+      <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+    {% endfor %}
+  </div>
+
+  {{ content | safe }}
+  
+  {% if collections.posts %}
+    {% set prevPost = collections.posts | getPreviousCollectionItem(page) %}
+    {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+      
+    <hr>
+
+    <div class="contained position-relative">
+      {% if prevPost %}
+        <div class="prev">
+          PREVIOUS
+          <a href="{{ prevPost.url | url }}">
+            <div>{{ prevPost.data.title }}</div>
+          </a>
+        </div>
+      {% endif %}
+          
+      {% if nextPost %}
+      <div class="next">
+        NEXT
+        <a href="{{ nextPost.url | url }}">
+          <div>{{ nextPost.data.title }}</div>
+        </a>
+      </div>
+      {% endif %}
+    </div>
+
+  {% endif %}
+</div>
+

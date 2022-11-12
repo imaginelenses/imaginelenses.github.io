@@ -1,0 +1,31 @@
+---
+pagination: 
+  data: collections
+  size: 1
+  alias: tag
+  filter: [ 'all', 'nav', 'posts', 'allTags', 'events', 'people', 'travel', 'life', 'projects']
+permalink: '/tags/{{ tag | slugify }}/'
+layout: 'base.html'
+eleventyComputed:
+  title: '{{ tag | capitalize }}'
+css: ['/css/blog.css']
+
+---
+
+{% set posts = collections[tag] %}
+{% set len = posts | length %}
+
+<div class="content">
+  <h2>{{ len }} post{% if len > 1 %}s{% endif %} tagged <a class="tag my-auto">{{ tag | capitalize }}</a></h2>
+  
+  <ol reversed>
+    {% for post in posts %}
+      <li>
+        <h4><a href="{{ post.url }}">{{ post.data.title }}</a></h4>
+      </li>
+    {% endfor %}
+  </ol>
+
+  <hr>
+  <p><a href="/tags">...see all tags.</a></p>
+</div>

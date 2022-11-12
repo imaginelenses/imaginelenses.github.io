@@ -1,0 +1,60 @@
+---
+layout: 'base.html'
+title: 'Home'
+tags: 'nav'
+order: 1
+css: ['/css/index.css']
+imgSrc: './src/media/'
+---
+
+<div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      {% image imgSrc, "banner_1.jpg", "d-block h-auto w-100" %}
+    </div>
+    <div class="carousel-item">
+      {% image imgSrc, "banner_2.jpg", "d-block h-auto w-100" %}
+    </div>
+    <div class="carousel-item">
+      {% image imgSrc, "banner_3.jpg", "d-block h-auto w-100" %}
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div id="blog" class="section">
+  {% image imgSrc, "tents_on_mountain_top.jpg", "sectionImage" %}
+  <a href="/blog">
+    <h1 class="title">Blog</h1>
+  </a>
+</div>
+
+<div id="photo" class="section">
+  {% image imgSrc, "taking_a_picture_by_the_lake.jpg", "sectionImage" %}
+  <a href="/photo">
+    <h1 class="title">Gallery</h1>
+  </a>
+</div>
+
+<div id="project" class="section">
+  {% image imgSrc, "jog_falls.jpg", "sectionImage" %}
+  <a href="/project">
+    <h1 class="title">Project</h1>
+  </a>
+</div>
+
+<div id="about" class="section">
+  {% image imgSrc, "boats_at_river_bank.jpg", "sectionImage" %}
+  <a href="/about">
+    <h1 class="title">About</h1>
+  </a>
+</div>
+
+<script src="/js/scroll.js"></script>

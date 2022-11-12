@@ -1,0 +1,9 @@
+{
+    "layout": "post.html",
+    "tags": "posts",
+    "permalink": "/blog/{{ page.fileSlug }}/",
+    "eleventyComputed": {
+        "imgSrc": "./src/media/posts/{{ page.date | htmlDate }}-{{ page.fileSlug }}/"
+    }
+}
+

@@ -1,0 +1,14 @@
+---
+layout: 'base.html'
+css: ['/css/blog.css']
+---
+
+<div class="content">
+  <h2>{{ collections.allTags | length }} Tags</h2>
+  <div class="">
+    {% for tag in collections.allTags %}
+      {% set tagUrl %}/tags/{{ tag | slugify }}{% endset %}
+      <a href="{{ tagUrl }}" class="tag">{{ tag }}</a>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,57 @@
+---
+layout: "base.html"
+title: 'Blog'
+tags: 'nav'
+order: 4
+css: ['/css/blogList.css', '/css/projects.css', '/css/blog.css']
+---
+
+<div class="content">
+  <h2>Newest</h2>
+
+  <div class="blogList contained">
+    {% for post in collections.posts | reverse | limit(6) %}
+      <a href="{{ post.url | url }}" class="blogCard">
+        {% ogImage ["https://imaginelenses.com/", post.url ] | join %}
+        <h4>{{ post.data.title }}</h4>
+      </a>
+    {% endfor %}
+  </div>
+  
+  <br>
+  
+  <h2>
+    <div class="projectTitleContainer">
+      <div class="projectTitle">{% title "Archive" %}</div>
+      {% set len = collections.posts | length %}
+      <div class="date">{{ len }} Post{% if len > 1 %}s{% endif %}</div>
+    </div>
+  </h2>
+
+  {% set years = [] %}
+  {% for year, posts in collections.postsByYear %}
+    {% set years = (years.push(year), years) %}
+  {% endfor %}
+
+  {% for year in years | reverse %}
+    <h3>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">{% title year %}</div>
+        {% set len = collections.postsByYear[year] | length %}
+        <div class="date">{{ len }} Post{% if len > 1 %}s{% endif %}</div>
+      </div>
+    </h3>  
+    <ol reversed>
+      {% for post in collections.postsByYear[year] | reverse %}
+        <li>
+          <h4>
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+            {% for tag in post.data.tags | filterTags %}
+              <span class="tag">{{ tag }}</span>  
+            {% endfor %}
+          </h4>
+        </li>
+      {% endfor %}
+    </ol>  
+  {% endfor %}
+</div>

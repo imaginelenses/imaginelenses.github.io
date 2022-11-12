@@ -1,0 +1,24 @@
+.section {
+    position: relative;
+    overflow: hidden;
+
+    .title {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-55%);
+        left: 5%;
+        width: auto !important;
+        margin: 0;
+        color: white;
+    }
+}
+
+.sectionImage {
+    height: auto;
+    width: 100%;
+}
+
+#photo .title, #about .title {
+    left: auto;
+    right: 5%;
+}

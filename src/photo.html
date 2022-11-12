@@ -1,0 +1,83 @@
+---
+layout: 'base.html'
+title: 'Photography'
+tags: 'nav'
+order: 3
+css: ['/css/photo.css']
+---
+
+<div class="title h1 m-5 mt-0 text-center">Travel</div>
+<div class="gallery">
+  {% for img in collections.travel %}
+  {% image img, "", "galleryImage", "(max-width: 650px) 50vw, 33.3vw", loop.index %}
+  {% endfor %}
+</div>
+
+<div class="title h1 m-5 text-center">Events</div>
+<div class="gallery">
+  {% for img in collections.events %}
+  {% image img, "", "galleryImage", "(max-width: 650px) 50vw, 33.3vw", loop.index + (collections.travel | length) %}
+  {% endfor %}
+</div>
+
+<div class="title h1 m-5 text-center">People</div>
+<div class="gallery">
+  {% for img in collections.people %}
+  {% image img, "", "galleryImage", "(max-width: 650px) 50vw, 33.3vw", loop.index + (collections.travel | length) +
+  (collections.events | length) %}
+  {% endfor %}
+</div>
+
+<div class="title h1 m-5 text-center">Life</div>
+<div class="gallery">
+  {% for img in collections.life %}
+  {% image img, "", "galleryImage", "(max-width: 650px) 50vw, 33.3vw", loop.index + (collections.travel | length) +
+  (collections.events | length) + (collections.people | length) %}
+  {% endfor %}
+</div>
+
+<!-- Modal -->
+<div class="modal" id="fullscreenModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="fullscreenModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-transparent border-0">
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div id="carousel" class="carousel carousel-dark carousel-fade m-auto" data-interval="false">
+        <div class="carousel-inner">
+          {% for img in collections.travel %}
+          <div class="carousel-item">
+            {% image img, "", "d-block fullscreen", "100vw", "", true %}
+          </div>
+          {% endfor %}
+          {% for img in collections.events %}
+          <div class="carousel-item">
+            {% image img, "", "d-block fullscreen", "100vw", "", true %}
+          </div>
+          {% endfor %}
+          {% for img in collections.people %}
+          <div class="carousel-item">
+            {% image img, "", "d-block fullscreen", "100vw", "", true %}
+          </div>
+          {% endfor %}
+          {% for img in collections.life %}
+          <div class="carousel-item">
+            {% image img, "", "d-block fullscreen", "100vw", "", true %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/gallery.js"></script>

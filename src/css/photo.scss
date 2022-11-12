@@ -1,0 +1,54 @@
+.gallery {
+    --spacer: 0.8rem;
+    padding: var(--spacer);
+    columns: 3;
+    column-gap: var(--spacer);
+}
+
+.galleryImage {
+    height: auto;
+    width: 100%;
+    margin-bottom: var(--spacer);
+    transition: all .1s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.galleryImage:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 650px) {
+    .gallery {
+        columns: 2;
+    }
+}
+
+.carousel-inner, .carousel-item, .fullscreen {
+    max-height: 95vh;
+    width: auto;
+    max-width: 95vw;
+}
+
+.carousel-inner {
+    transition: transform 2s ease, opacity .5s ease-out;
+}
+
+.modal-content > .btn-close {
+    position: absolute;
+    top: 10px; 
+    right: 10px;
+}
+
+.modal-content > .carousel-control-prev {
+    position: absolute;
+    height: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.modal-content > .carousel-control-next {
+    position: absolute;
+    height: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
+}

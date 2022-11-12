@@ -1,0 +1,24 @@
+{
+  "name": "imaginelenses",
+  "version": "2.0.0",
+  "description": "Imaginelenses Website",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "imaginelenses <imaginelenses@gmail.com> (https://www.imaginelenses.com/)",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-img": "^2.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "fast-glob": "^3.2.12",
+    "lite-youtube-embed": "^0.2.0",
+    "luxon": "^3.1.0",
+    "sass": "^1.55.0"
+  },
+  "engines": {
+    "node": ">= 19"
+  }
+}
