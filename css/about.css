@@ -1,0 +1,17 @@
+.avatar {
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+}
+
+.dp {
+  height: auto;
+  width: min(390px, 90vw);
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  iframe {
+    height: 352px;
+  }
+}
