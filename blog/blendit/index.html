@@ -5,29 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self';
-      style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css;
-      script-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js https://buttons.github.io/buttons.js;
-      img-src 'self' https://*.imaginelenses.com/ https://*.11ty.dev/ https://i.ytimg.com https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/512px-JavaScript-logo.png https://www.w3.org/html/logo/badge/html5-badge-h-solo.png https://img.icons8.com/color/48/null/c-programming.png data: http://www.w3.org/*;
-      connect-src https://*.github.com;
-      frame-src https://imaginelenses.com/;
-      child-src 'none';
-    " 
-  />
-  <meta name="generator" content="Eleventy">
+  
+
+  <meta name="generator" content="Eleventy v1.0.2">
 
   
 
-  <meta name="description" content="">
+  <meta name="description" content="For the first time, back in 2020, I had to develop my very own piece of software for the final project of David Malan&#39;s class, CS50.  While searching for actual problems...">
 
   <meta property="og:url" content="https://imaginelenses.com/blog/blendit/">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="imaginelenses">
   <meta property="og:title" content="Version Control for Non-Textual Files &amp; the Story of Blendit">
-  <meta property="og:description" content="">
+  <meta property="og:description" content="For the first time, back in 2020, I had to develop my very own piece of software for the final project of David Malan&#39;s class, CS50.  While searching for actual problems...">
   <meta property="og:image" content="https://v1.screenshot.11ty.dev/https%3A%2F%2Fimaginelenses.com%2Fblog%2Fblendit%2F/opengraph/">
 
   <meta property="twitter:card" content="summary_large_image">
@@ -40,7 +30,7 @@
   <meta property="profile:gender" content="male">
   
   <meta property="article:published_time" content="2022-09-26T00:00:00.000+05:30">
-  
+  <meta property="article:modified_time" content="2022-09-26T00:00:00.000+05:30">
   <meta property="article:author" content="https://imaginelenses.com/">
   <meta property="article:section" content="Technology">
   
@@ -51,7 +41,6 @@
   <meta property="article:tag" content="blender">
   
 
-
   <title>
     Imaginelenses
     
@@ -59,13 +48,20 @@
     
   </title>
 
+  <!-- Preconnect to Eleventy services -->
+  <link href="https://v1.opengraph.11ty.dev" rel="preconnect" crossorigin>
+  <link href="https://v1.indieweb-avatar.11ty.dev" rel="preconnect" crossorigin>
 
-  <link rel="shortcut icon" href="/media/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/main.css">
+
   
-    <link rel="stylesheet" href="/css/blog.css">
+  <style>:root{--containedWidth: 50vw}.navbar-brand{font-size:32px;letter-spacing:1.5px;user-select:none}.navbar-toggler:focus{box-shadow:none !important}.content{display:flex;flex-direction:column;align-items:center;color:var(--bs-gray-800)}h1,h2,h3,h4,h5,h6,p,hr,time,.contained,pre,blockquote{width:var(--containedWidth) !important;max-width:800px}.fullWidth{height:auto;width:min(95vw,var(--containedWidth) + 10vw);margin-top:1rem;margin-bottom:3rem;box-shadow:0 .5rem 1rem rgba(0,0,0,.15)}h2,h3{margin-top:min(5%,40px);text-transform:uppercase;font-weight:500;color:var(--bs-gray-900)}h2 a[id]>svg,h3 a[id]>svg{height:.8em;margin:0 0 .1em 5px;fill:var(--bs-gray-800);scale:0;transition:scale ease-in 50ms}h2:hover a[id]>svg,h3:hover a[id]>svg{scale:100%}h2::after,h3::after{content:"";display:block;margin:10px 0px 30px 0px;height:1px;width:100%;background:var(--bs-gray-500)}h3::after{margin-bottom:10px;background:var(--bs-gray-400)}h4{margin-top:10px}.title{font-size:5em;font-weight:570;text-transform:uppercase;color:var(--bs-black);line-height:1}p{font-size:1.5em;text-align:justify}a,li>h4{color:var(--bs-gray-800);text-decoration-color:var(--bs-primary);text-transform:none;font-weight:400}a:hover{color:var(--bs-primary)}a[style]::before{content:"";display:inline-block;height:1em;width:1em;margin:0 4px 1px 0;vertical-align:text-bottom;background-image:var(--icon);background-size:contain}pre{margin-bottom:20px !important;background-color:#000 !important}code{padding:2px 5px;user-select:all;color:var(--bs-gray-900);border-radius:5px;background:var(--bs-gray-300)}blockquote,blockquote>a{font-size:27px;font-style:italic;font-weight:300}blockquote{text-align:justify;padding:5px 15px 5px 10px;border-style:solid;border-width:0;border-left-width:8px;border-color:var(--bs-gray-200);background:var(--bs-gray-100)}blockquote::before,blockquote::after{font-size:30px;font-weight:400;color:var(--bs-gray-500)}blockquote::before{content:open-quote}blockquote::after{content:close-quote}footer{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;margin:100px 0 20px 0}.social{margin-bottom:15px}.social a{text-decoration:none;margin:0px 5px}.social .bi{height:30px}.social a:hover .bi-linkedin{fill:#0077b5}.social a:hover .bi-github{fill:#000}.social a:hover .bi-youtube{fill:red}@media only screen and (max-width: 1400px){:root{--containedWidth: max(calc(1200px * 0.8), 70vw)}}@media only screen and (max-width: 1200px){:root{--containedWidth: max(calc(600px * 0.95), 80vw)}}@media only screen and (max-width: 600px){:root{--containedWidth: 95vw}.title{font-size:3em}}</style>
   
+  <style>.tag{--spacer: 2px;margin-right:var(--spacer);margin-left:var(--spacer);padding:3px 5px;text-transform:uppercase;text-decoration:none;border-style:solid;border-width:1px;border-radius:3px;border-color:var(--bs-gray);color:var(--bs-gray);font-size:small;user-select:none;white-space:nowrap}.tag:hover{text-decoration:none;color:#fff;background-color:var(--bs-gray-600)}.prev,.next{position:absolute;width:50%;text-transform:uppercase;font-weight:500;color:var(--bs-gray-800)}.prev a,.next a{font-size:large}.prev a div,.next a div{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.prev{left:0}.next{right:0;text-align:end}</style>
+  
+
   <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
 
 </head>
@@ -152,7 +148,7 @@
   </div>
 
   <div>
-<picture><source type="image/webp" srcset="/media/splash-1000w.webp 1000w" sizes="100vw"><source type="image/jpeg" srcset="/media/splash-1000w.jpeg 1000w" sizes="100vw"><img src="/media/splash-1000w.jpeg" width="1000" height="500" alt="splash" class="fullWidth" data-index="" loading="lazy" decoding="async"></picture>
+<picture><source type="image/webp" srcset="/media/splash-1000w.webp 1000w" sizes="100vw"><source type="image/jpeg" srcset="/media/splash-1000w.jpeg 1000w" sizes="100vw"><img src="/media/splash-1000w.jpeg" width="1000" height="500" alt="splash" class="fullWidth" data-index="" ></picture>
 </div>
 <p>For the first time, back in 2020, I had to develop my very own piece of software for the final project of <a href="https://twitter.com/davidjmalan" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com/');">David Malan's</a> class, <a href="https://cs50.harvard.edu/x/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fcs50.harvard.edu/');">CS50</a>. While searching for actual problems that I could or at least try to solve I realized, looking back at myself and my friends who did creative work, that we often wanted to save multiple versions of our work and resorted to duplicating files with filenames appended with numbers or dates .</p>
 <p>At this point I was aware that computer scientists had faced the same problem and solved it decades ago! That made me wonder why Version Control was only prevalent within computer science.</p>
@@ -160,7 +156,7 @@
 <p>With that I figured this is because a Version Control System (VCS) like Git is designed for textual files as opposed to Blender, DaVinci Resolve, or other graphical files. This raises the question of why there is not a VCS designed for non-textual files.</p>
 <p>Earlier that year I was introduced to <a href="https://www.blender.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.blender.org/');">Blender</a> and had come across scripting for Blender but had not looked into it. However, I noticed that whenever you performed any action in Blender it logged the corresponding function calls in the Info window. So if I could somehow record all those function calls and executed them within a new Blender file I should be able to recreate the original Blender file! This way I could save all the function calls in a Python file and can use Git as it was intended.</p>
 <p>However it was not that simple. For one Blender did not log all actions and I did not think I would be able to pull it off in time for class. Therefore I settled on a more approachable solution to the problem.</p>
-<h2>OneProjectFile -  Version Control for Creative Professionals<a id="oneprojectfile-version-control-for-creative-professionals" href="#oneprojectfile-version-control-for-creative-professionals" role="button"><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h2>
+<h2>OneProjectFile -  Version Control for Creative Professionals<a id="oneprojectfile-version-control-for-creative-professionals" href="#oneprojectfile-version-control-for-creative-professionals" role="button" aria-label="Link to OneProjectFile -  Version Control for Creative Professionals."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h2>
 <div>
 <picture><source type="image/webp" srcset="/media/project-1000w.webp 1000w, /media/project-1500w.webp 1500w" sizes="100vw"><source type="image/jpeg" srcset="/media/project-1000w.jpeg 1000w, /media/project-1500w.jpeg 1500w" sizes="100vw"><img src="/media/project-1000w.jpeg" width="1500" height="734" alt="project" class="fullWidth" data-index="" loading="lazy" decoding="async"></picture>
 </div>
@@ -171,19 +167,19 @@
 <p>While, yes, <em>technically</em> it is a VCS, it is not a good VCS as it is not efficient.</p>
 <p>Each time you commit your project to OneProjectFile it still duplicates your project but uses the commit ID as the filename and maintains a record of all the commits. So each time you select a commit, it serves the files corresponding to that commit.</p>
 <p>I finally graduated last month and began to realize the idea I came up with almost two years ago. I had also come up with the name, Blendit (Blender + Git), back then!</p>
-<h2>What is Blendit (Blender + Git) ?<a id="what-is-blendit-blender-git" href="#what-is-blendit-blender-git" role="button"><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h2>
+<h2>What is Blendit (Blender + Git) ?<a id="what-is-blendit-blender-git" href="#what-is-blendit-blender-git" role="button" aria-label="Link to What is Blendit (Blender + Git) ?."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h2>
 <p>Blendit is an <a href="https://docs.blender.org/manual/en/latest/advanced/app_templates.html)" target="_blank">Application Template</a> for Blender (similar to an add-on) which can be installed within Blender. Blendit is a Git integration which brings Version Control to Blender.</p>
 <p>Although Git is designed for textual files, it can track non-textual or binary files like Blender files. According to <a href="https://twitter.com/sastuvel" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com/');">Sybren</a> on <a href="https://blender.stackexchange.com/a/108186/154740" target="_blank">Blender Stack Exchange</a>, Blender Institute uses <a href="https://subversion.apache.org/" target="_blank">Subversion</a>.</p>
 <blockquote>
 At the Blender Institute / Blender Animation Studio we use Subversion for our projects. It works fine for blend files, but you have to make sure they are not compressed. Compression can cause the entire file to be different when only a single byte changed, whereas in the uncompressed blend file only that one byte will differ. As a result, binary diffs will be much smaller, and your repository will be faster to work with.
 </blockquote>
-<h3>How is Blendit Different?<a id="how-is-blendit-different" href="#how-is-blendit-different" role="button"><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h3>
+<h3>How is Blendit Different?<a id="how-is-blendit-different" href="#how-is-blendit-different" role="button" aria-label="Link to How is Blendit Different?."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h3>
 <p>Instead of tracking the Blender (binary) file itself, Blendit tracks the changes you make to the Blender file in real time. It does so by keeping track of the Python commands, from the <a href="https://docs.blender.org/api/current/index.html" target="_blank">Blender API</a>, used to make changes.</p>
 <p>This way we only track a textual (Python) file as Git was intended to be used.</p>
 <p>Each time you open a Blendit project, it regenerates the Blender file. This means you can delete the Blender file and still retain the project.</p>
 <p>In theory the size of the entire project should be lower than using any other VSC.</p>
 <p>With all that said this is just a <em><strong>proof of concept</strong></em> and far from production ready. As mentioned earlier Blender does not log all actions out of the box. There are ways to make Blender log all actions, but that would add huge overhead in the system. The way I get around this is by subscribing to required events using Blender's <a href="https://docs.blender.org/api/current/bpy.msgbus.html" target="_blank">Message Bus</a>. However, the Message Bus is in its early stages and cannot subscribe to all types of events. See <a href="https://github.com/imaginelenses/blendit/releases/tag/v0-1-0-alpha" target="_blank">release notes</a> to know more.</p>
-<h3>In Conclusion<a id="in-conclusion" href="#in-conclusion" role="button"><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h3>
+<h3>In Conclusion<a id="in-conclusion" href="#in-conclusion" role="button" aria-label="Link to In Conclusion."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h3>
 <p>If you find this interesting, check the <a href="https://blendit.imaginelenses.com/" target="_blank">website</a> and <a href="https://github.com/imaginelenses/blendit/releases/download/v0-1-1-alpha/blendit.zip" target="_blank">download Blendit</a> - It is Free!</p>
 <p><a href="https://github.com/imaginelenses/blendit" target="_blank">Star Blendit on GitHub!</a> This is the easiest way to show support for the project. Do report issues or provide suggestions. Contributions are welcome.</p>
 <p>If you would like to learn Computer Science and want to build something on your own, <a href="https://cs50.harvard.edu/x/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fcs50.harvard.edu/');">CS50</a> is a great starting point - It is the best class I have ever taken! You can <a href="https://cs50.harvard.edu/x/2022/zoom/" target="_blank">sign up</a> to attend live lectures via Zoom or watch live on YouTube - today is lecture 4.</p>
