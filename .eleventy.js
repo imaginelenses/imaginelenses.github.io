@@ -14,6 +14,8 @@ const life   = fg.sync(['**/media/life/*',   '!*.ico'])
 
 module.exports = (config) => {
 
+    config.addGlobalData('production', process.env.PRODUCTION)
+
     config.addPlugin(syntaxHighlight)
     
     config.addCollection('travel', (collection) => travel)
@@ -22,7 +24,7 @@ module.exports = (config) => {
     config.addCollection('life',   (collection) => life)
 
     config.addNunjucksAsyncShortcode('image', 
-    async (dir, file, cls="", sizes="100vw", index="", statsOnly=false) => {
+    async (dir, file, cls="", sizes="100vw", index="", statsOnly=false, lazy=true) => {
         let src = dir + file
 
         let extension = path.extname(src)
@@ -49,7 +51,7 @@ module.exports = (config) => {
           `${Object.values(metadata).map(imageFormat => (
             `<source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(', ')}" sizes="${sizes}">`
           )).join('')}` +
-          `<img src="${lowSrc.url}" width="${highSrc.width}" height="${highSrc.height}" alt="${alt}" class="${cls}" data-index="${index}" loading="lazy" decoding="async">` +
+          `<img src="${lowSrc.url}" width="${highSrc.width}" height="${highSrc.height}" alt="${alt}" class="${cls}" data-index="${index}" ${(lazy) ? 'loading="lazy" decoding="async"' : ''}>` +
         '</picture>')
     })
 
@@ -73,7 +75,7 @@ module.exports = (config) => {
     config.addNunjucksShortcode('title', (title) => {
         let id = config.getFilter('slugify')(title)
         return (
-        `${title}<a id="${id}" href="#${id}" role="button">` +
+        `${title}<a id="${id}" href="#${id}" role="button" aria-label="Link to ${title}.">` +
           `<svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg>` +
         `</a>`
         ) 
@@ -88,13 +90,13 @@ module.exports = (config) => {
     })
 
     // OpenGraph images
-    config.addNunjucksShortcode('ogImage', (link) => {
+    config.addNunjucksShortcode('ogImage', (link, lazy=true) => {
         let url = encodeURIComponent(link)
         return (
         '<picture>' +
           `<source type="image/webp" srcset="https://v1.opengraph.11ty.dev/${url}/medium/webp/">` +
           `<source type="image/webp" srcset="https://v1.opengraph.11ty.dev/${url}/medium/jpeg/">` +
-          `<img src="https://v1.opengraph.11ty.dev/${url}/small/jpeg/" alt="Preview of ${link}" width="650" height="341" class="ogImage" loading="lazy" decoding="async">` +
+          `<img src="https://v1.opengraph.11ty.dev/${url}/small/jpeg/" alt="Preview of ${link}" width="650" height="341" class="ogImage" ${(lazy) ? 'loading="lazy" decoding="async"' : ''}>` +
         '</picture>'
         )
     })
@@ -109,7 +111,7 @@ module.exports = (config) => {
         let yearPostsDict = {}
         let len = posts.length
         for (let i = 0; i < len; i++) {
-            let year = DateTime.fromJSDate(posts[i].date, {zone: 'utc'}).toFormat('yyyy')
+            let year = DateTime.fromJSDate(posts[i].date, {zone: 'Asia/Kolkata'}).toFormat('yyyy')
             if (!(year in yearPostsDict)) {
                 yearPostsDict[year] = []
             }
@@ -120,16 +122,10 @@ module.exports = (config) => {
     })
     
     // SASS
-    config.addTemplateFormats('scss')
-    config.addExtension('scss', {
-        outputFileExtension: 'css',
-        compile: async (inputContent) => {
-            let result = sass.compileString(inputContent)
-
-            return async (data) => {
-                return result.css
-            }
-        }
+    config.addWatchTarget('./src/css')
+    config.addNunjucksShortcode('scss', (src) => {
+        let result = sass.compile(src, {style: "compressed"})
+        return `<style>${result.css}</style>`
     })
 
     // Filter tags list
@@ -151,14 +147,16 @@ module.exports = (config) => {
     config.addPassthroughCopy('./src/media/favicon.ico')
     config.addPassthroughCopy('./src/CNAME')
     
+    // Scripts
     config.addPassthroughCopy('./src/js')
     config.addWatchTarget('./src/js')
 
+    // Dates
     config.addFilter('htmlDate', (date) => (
-        DateTime.fromJSDate(date, {zone: 'utc'}).toFormat('yyyy-LL-dd')
+        DateTime.fromJSDate(date, {zone: 'Asia/Kolkata'}).toFormat('yyyy-LL-dd')
     ))
     config.addFilter('date', (date) => (
-        DateTime.fromJSDate(date, {zone: 'utc'}).toFormat('dd LLL yyyy')
+        DateTime.fromJSDate(date, {zone: 'Asia/Kolkata'}).toFormat('dd LLL yyyy')
     ))
     config.addShortcode('year', () => `${new Date().getFullYear()}`)
 

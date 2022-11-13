@@ -1,12 +1,14 @@
 ---
 title: 'Kodak Duaflex - An analog film camera'
 tags:
- - camera
- - tech
+    - retro
+    - camera
+    - tech
+description: "There's nearly a 60 years difference between this camera and the camera that I'm taking this picture on. Time travel indeed. This is a picture looking at the..."
 ---
 
 <div>
-{% image imgSrc, "looking-through-the-viewfinder.jpg", "fullWidth" %}
+{% image imgSrc, "looking-through-the-viewfinder.jpg", "fullWidth", "100vw", "", false, false %}
 </div>
 
 There's nearly a 60 years difference between this camera and the camera that I'm taking this picture on. Time travel indeed.

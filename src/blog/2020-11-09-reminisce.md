@@ -1,13 +1,13 @@
 ---
 title: 'Reminisce'
 tags:
-    - 'vintage'
+    - 'retro'
     - 'writing'
-    - 'camera'
+description: 'Sitting against your desk you put your fingertips on these keys and being to strike one letter at a time putting your thoughts into words straight onto pieces of paper you can hold.'
 ---
 
 <div>
-{% image imgSrc, "vintage-typewriter.jpg", "fullWidth" %}
+{% image imgSrc, "vintage-typewriter.jpg", "fullWidth", "100vw", "", false, false %}
 </div>
 
 Sitting against your desk you put your fingertips on these keys and being to strike one letter at a time putting your thoughts into words straight onto pieces of paper you can hold. The sound of each keystroke - so tactile and mechanical. You had to push the carriage back to it's place after each line; not knowing when to the last word of your line would run out of paper.

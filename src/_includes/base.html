@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  {% if production %}
   <meta
     http-equiv="Content-Security-Policy"
     content="
@@ -17,7 +18,9 @@
       child-src 'none';
     " 
   />
-  <meta name="generator" content="Eleventy">
+  {% endif %}
+
+  <meta name="generator" content="{{ eleventy.generator }}">
 
   {% set siteURL = ["https://imaginelenses.com", page.url] | join %}
 
@@ -40,13 +43,12 @@
   <meta property="profile:gender" content="male">
   
   <meta property="article:published_time" content="{{ page.date | htmlDate }}T00:00:00.000+05:30">
-  {# <meta property="article:modified_time" content="{{ page.date | htmlDate }}"> #}
+  <meta property="article:modified_time" content="{% if lastModified %}{{ lastModified | htmlDate }}{% else %}{{ page.date | htmlDate }}{% endif %}T00:00:00.000+05:30">
   <meta property="article:author" content="https://imaginelenses.com/">
   <meta property="article:section" content="Technology">
   {% for tag in tags | filterTags %}
   <meta property="article:tag" content="{{ tag }}">
   {% endfor %}
-
 
   <title>
     Imaginelenses
@@ -55,13 +57,20 @@
     {% endif %}
   </title>
 
+  <!-- Preconnect to Eleventy services -->
+  <link href="https://v1.opengraph.11ty.dev" rel="preconnect" crossorigin>
+  <link href="https://v1.indieweb-avatar.11ty.dev" rel="preconnect" crossorigin>
 
-  <link rel="shortcut icon" href="/media/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/main.css">
+
+  {# Styles #}
+  {% scss "./src/css/main.scss" %}
   {% for link in css %}
-    <link rel="stylesheet" href="{{ link }}">
+  {% scss ["./src/css/", link] | join %}
   {% endfor %}
+
   <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
 
 </head>

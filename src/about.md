@@ -3,8 +3,9 @@ layout: 'base.html'
 title: 'About'
 tags: 'nav'
 order: 5
-css: ['/css/about.css']
+css: ['about.scss']
 imgSrc: './src/media/'
+description: "Hello, I'm Karthik Shivashankar, and Imaginelenses is my personal brand. A few years ago, I took CS50 by David Malan at Harvard and I fell in love with Computer Science."
 ---
 
 <div class="content">
@@ -12,7 +13,7 @@ imgSrc: './src/media/'
 <h1 class="title">I am imaginelenses</h1>
 
 <div class="contained avatar">
-  {% image imgSrc, "a-picture-of-me-Karthik.jpg", "dp"  %}
+  {% image imgSrc, "a-picture-of-me-Karthik.jpg", "dp", "100vw", "", false, false  %}
 </div>
 
 Hello, I'm **Karthik Shivashankar**, and Imaginelenses is my personal brand. <a href="mailto:imaginelenses@gmail.com">Send me an email</a>.

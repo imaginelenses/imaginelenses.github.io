@@ -3,7 +3,8 @@ layout: "base.html"
 title: 'Blog'
 tags: 'nav'
 order: 4
-css: ['/css/blogList.css', '/css/projects.css', '/css/blog.css']
+css: ['blogList.scss', 'projects.scss', 'blog.scss']
+description: "A collection of Blogs published on Imaginelenses by Karthik Shivashankar."
 ---
 
 <div class="content">
@@ -12,7 +13,7 @@ css: ['/css/blogList.css', '/css/projects.css', '/css/blog.css']
   <div class="blogList contained">
     {% for post in collections.posts | reverse | limit(6) %}
       <a href="{{ post.url | url }}" class="blogCard">
-        {% ogImage ["https://imaginelenses.com/", post.url ] | join %}
+        {% ogImage ["https://imaginelenses.com", post.url ] | join, false %}
         <h4>{{ post.data.title }}</h4>
       </a>
     {% endfor %}

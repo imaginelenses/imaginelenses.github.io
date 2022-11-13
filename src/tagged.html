@@ -8,8 +8,8 @@ permalink: '/tags/{{ tag | slugify }}/'
 layout: 'base.html'
 eleventyComputed:
   title: '{{ tag | capitalize }}'
-css: ['/css/blog.css']
-
+  description: "A collection of Blogs tagged '{{ tag | capitalize }}', published on Imaginelenses by Karthik Shivashankar."
+css: ['blog.scss']
 ---
 
 {% set posts = collections[tag] %}

@@ -12,7 +12,7 @@ source: 'https://github.com/imaginelenses/blendit'
 <a href="https://blendit.imaginelenses.com/" target="_blank">Blendit</a> (Blender + Git) - A Git integration that brings Version Control to Blender.
 
 <div>
-{% image "https://raw.githubusercontent.com/imaginelenses/blendit/main/splash.png", "", "fullWidth" %}
+{% image "https://raw.githubusercontent.com/imaginelenses/blendit/main/splash.png", "", "fullWidth", "100vw", "", false, false %}
 </div>
 
 While Git and other Version Control Systems (VCS) can track `.blend` (binary) files it does not make much sense as they are designed for textual files.

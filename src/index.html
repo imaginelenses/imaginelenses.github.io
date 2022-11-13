@@ -3,17 +3,18 @@ layout: 'base.html'
 title: 'Home'
 tags: 'nav'
 order: 1
-css: ['/css/index.css']
+css: ['index.scss']
 imgSrc: './src/media/'
+description: 'Imaginelenses - the personal brand of Karthik Shivashankar'
 ---
 
 <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      {% image imgSrc, "banner_1.jpg", "d-block h-auto w-100" %}
+      {% image imgSrc, "banner_1.jpg", "d-block h-auto w-100", "100vw", "", false, false %}
     </div>
     <div class="carousel-item">
-      {% image imgSrc, "banner_2.jpg", "d-block h-auto w-100" %}
+      {% image imgSrc, "banner_2.jpg", "d-block h-auto w-100", "100vw", "", false, false %}
     </div>
     <div class="carousel-item">
       {% image imgSrc, "banner_3.jpg", "d-block h-auto w-100" %}
@@ -30,7 +31,7 @@ imgSrc: './src/media/'
 </div>
 
 <div id="blog" class="section">
-  {% image imgSrc, "tents_on_mountain_top.jpg", "sectionImage" %}
+  {% image imgSrc, "tents_on_mountain_top.jpg", "sectionImage", "100vw", "", false, false %}
   <a href="/blog">
     <h1 class="title">Blog</h1>
   </a>

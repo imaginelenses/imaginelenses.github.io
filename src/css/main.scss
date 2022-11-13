@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6, p, hr, time, .contained, pre, blockquote {
 
 .fullWidth {
     height: auto;
-    width: calc(var(--containedWidth) + 10vw);
+    width: min(95vw, calc(var(--containedWidth) + 10vw));
     margin-top: 1rem;
     margin-bottom: 3rem;
     box-shadow:  0 .5rem 1rem rgba(black, .15);
@@ -185,23 +185,19 @@ footer {
 
 @media only screen and (max-width: 1400px) {
     :root {
-        --containedWidth: 70vw;
+        --containedWidth: max(calc(1200px * 0.8), 70vw);
     }
 }
 
 @media only screen and (max-width: 1200px) {
     :root {
-        --containedWidth: 80vw;
+        --containedWidth: max(calc(600px * 0.95), 80vw);
     }
 }
 
 @media only screen and (max-width: 600px) {
     :root {
         --containedWidth: 95vw;
-    }
-
-    .fullWidth {
-        width: 95vw;
     }
 
     .title {
