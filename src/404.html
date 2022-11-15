@@ -1,0 +1,46 @@
+---
+layout: 'base.html'
+permalink: '404.html'
+title: 'Not Found'
+css: ['blog.scss']
+description: "Error 404 - Page Not Found"
+---
+
+<div class="content">
+  <h1 class="title">404 Not Found</h1>
+
+  <br>
+
+  <p>Sorry, the page you're looking for is not found!</p>
+
+  {% set num = 4 %}
+  {% set len = collections.posts | length %}
+  {% if  len < num %}
+  {% set num = 4 %}
+  {% endif %}
+
+  <p>Consider reading one of these {{ num }} blog posts instead.</p>
+
+  <h2>Newest</h2>
+
+  <div class="blogList contained">
+    <ol reversed>
+      {% for post in collections.posts | reverse | limit(4) %}
+      <li>
+        <h4>
+          <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+          {% for tag in post.data.tags | filterTags %}
+          <span class="tag">{{ tag }}</span>  
+          {% endfor %}
+        </h4>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+
+  <hr>
+
+  <h4><a href="/blog">...see all posts.</a></h4>
+
+</div>
+

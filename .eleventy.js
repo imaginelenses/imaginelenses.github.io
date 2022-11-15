@@ -89,14 +89,18 @@ module.exports = (config) => {
         )
     })
 
+    // Cache Key
+    const cacheKey = DateTime.now().setZone('Asia/Kolkata').toISODate().replaceAll('-', '')
+    config.addGlobalData('cacheKey', () => (cacheKey))
+    
     // OpenGraph images
     config.addNunjucksShortcode('ogImage', (link, lazy=true) => {
         let url = encodeURIComponent(link)
         return (
         '<picture>' +
-          `<source type="image/webp" srcset="https://v1.opengraph.11ty.dev/${url}/medium/webp/">` +
-          `<source type="image/webp" srcset="https://v1.opengraph.11ty.dev/${url}/medium/jpeg/">` +
-          `<img src="https://v1.opengraph.11ty.dev/${url}/small/jpeg/" alt="Preview of ${link}" width="650" height="341" class="ogImage" ${(lazy) ? 'loading="lazy" decoding="async"' : ''}>` +
+          `<source type="image/webp" srcset="https://v1.opengraph.11ty.dev/${url}/medium/webp/_${cacheKey}/">` +
+          `<source type="image/webp" srcset="https://v1.opengraph.11ty.dev/${url}/medium/jpeg/_${cacheKey}/">` +
+          `<img src="https://v1.opengraph.11ty.dev/${url}/small/jpeg/_${cacheKey}/" alt="Preview of ${link}" width="650" height="341" class="ogImage" ${(lazy) ? 'loading="lazy" decoding="async"' : ''}>` +
         '</picture>'
         )
     })
