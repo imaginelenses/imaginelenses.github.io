@@ -14,18 +14,15 @@ description: "Error 404 - Page Not Found"
   <p>Sorry, the page you're looking for is not found!</p>
 
   {% set num = 4 %}
-  {% set len = collections.posts | length %}
-  {% if  len < num %}
-  {% set num = 4 %}
-  {% endif %}
+  {% set posts = collections.posts | limit(num) %}
 
-  <p>Consider reading one of these {{ num }} blog posts instead.</p>
+  <p>Consider reading one of these {{ posts | length }} blog posts instead.</p>
 
   <h2>Newest</h2>
 
   <div class="blogList contained">
     <ol reversed>
-      {% for post in collections.posts | reverse | limit(4) %}
+      {% for post in posts | reverse %}
       <li>
         <h4>
           <a href="{{ post.url | url }}">{{ post.data.title }}</a>
