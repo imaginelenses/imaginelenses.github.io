@@ -5,21 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Imaginelenses - Tech</title>
+  <title>Imaginelenses - Setting Up Static IP in Ubuntu</title>
 
   
 
   <meta name="generator" content="Eleventy v2.0.1">
-  <meta name="description" content="A collection of Blogs tagged &#39;Tech&#39;, published on Imaginelenses by Karthik Shivashankar.">
+  <meta name="description" content="How to setup Static IP in Ubuntu.">
   <meta name="author" content="Karthik Shivashankar">
   
   
-  <meta property="og:url" content="https://imaginelenses.com/tags/tech/">
+  <meta property="og:url" content="https://imaginelenses.com/blog/static-ip-setup/">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Imaginelenses">
-  <meta property="og:title" content="Tech">
-  <meta property="og:description" content="A collection of Blogs tagged &#39;Tech&#39;, published on Imaginelenses by Karthik Shivashankar.">
-  <meta property="og:image" content="https://v1.screenshot.11ty.dev/https%3A%2F%2Fimaginelenses.com%2Ftags%2Ftech%2F/opengraph/_20230623">
+  <meta property="og:title" content="Setting Up Static IP in Ubuntu">
+  <meta property="og:description" content="How to setup Static IP in Ubuntu.">
+  <meta property="og:image" content="https://v1.screenshot.11ty.dev/https%3A%2F%2Fimaginelenses.com%2Fblog%2Fstatic-ip-setup%2F/opengraph/_20230623">
 
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:site" content="@imaginelenses">
@@ -30,10 +30,16 @@
   <meta property="profile:username" content="imaginelenses">
   <meta property="profile:gender" content="male">
   
-  <meta property="article:published_time" content="2023-06-23T00:00:00.000+05:30">
-  <meta property="article:modified_time" content="2023-06-23T00:00:00.000+05:30">
+  <meta property="article:published_time" content="2023-06-14T00:00:00.000+05:30">
+  <meta property="article:modified_time" content="2023-06-14T00:00:00.000+05:30">
   <meta property="article:author" content="https://imaginelenses.com/">
   <meta property="article:section" content="Technology">
+  
+  <meta property="article:tag" content="ubuntu">
+  
+  <meta property="article:tag" content="server">
+  
+  <meta property="article:tag" content="homelab">
   
 
   <!-- Preconnect to Eleventy services -->
@@ -119,23 +125,79 @@
   <main class="flex-grow-1 flex-shrink-1">
     
       
-
-
-
 <div class="content">
-  <h2>1 post tagged <a class="tag my-auto">Tech</a></h2>
+  <h1 class="title">Setting Up Static IP in Ubuntu</h1>
   
-  <ol reversed>
+  <div class="contained mb-5">
+    <time datetime="2023-06-14" class="me-2">14 Jun 2023</time>
     
-      <li>
-        <h4><a href="/blog/kodak-duaflex/">Kodak Duaflex - An analog film camera</a></h4>
-      </li>
+      
+      <a href="/tags/ubuntu" class="tag">ubuntu</a>
     
-  </ol>
+      
+      <a href="/tags/server" class="tag">server</a>
+    
+      
+      <a href="/tags/homelab" class="tag">homelab</a>
+    
+  </div>
 
-  <hr>
-  <p><a href="/tags">...see all tags.</a></p>
+  <h2>Determining Network Interface Card (NIC) name<a id="determining-network-interface-card-nic-name" href="#determining-network-interface-card-nic-name" role="button" aria-label="Link to Determining Network Interface Card (NIC) name."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> lshw <span class="token parameter variable">-c</span> network</code></pre>
+<p>Under the <code>Ethernet Interface</code> copy the <code>logical name</code>.</p>
+<h2>Finding Netmask<a id="finding-netmask" href="#finding-netmask" role="button" aria-label="Link to Finding Netmask."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">ip</span> a</code></pre>
+<p>Against the NIC name you should see a sequence of the format <code>XXX.XXX.XXX.XXX/YY</code>.</p>
+<p>Where <code>XXX.XXX.XXX.XXX</code> is the dynamically assigned IP address and <code>YY</code> is the Netmask. Copy the Netmask.</p>
+<h2>Finding Default Gateway<a id="finding-default-gateway" href="#finding-default-gateway" role="button" aria-label="Link to Finding Default Gateway."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">ip</span> r <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'default'</span></code></pre>
+<p>Copy the sequence of the format <code>ZZZ.ZZZ.ZZZ.ZZZ</code> which is the Default Gateway.</p>
+<h2>Creating Configuration File<a id="creating-configuration-file" href="#creating-configuration-file" role="button" aria-label="Link to Creating Configuration File."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h2>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /etc/netplan</code></pre>
+<p>If you already have a file similar to <code>00-installer-config.yaml</code> modify it else create one.</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">network</span><span class="token punctuation">:</span><br>  <span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token number">2</span><br>  <span class="token key atrule">ethernets</span><span class="token punctuation">:</span><br>    <span class="token key atrule">&lt;name></span><span class="token punctuation">:</span><br>      <span class="token key atrule">dhcp4</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><br>      <span class="token key atrule">addresses</span><span class="token punctuation">:</span><br>        <span class="token punctuation">-</span> XXX.XXX.XXX.XXX/YY<br>      <span class="token key atrule">routes</span><span class="token punctuation">:</span><br>        <span class="token punctuation">-</span> <span class="token key atrule">to</span><span class="token punctuation">:</span> default<br>          <span class="token key atrule">via</span><span class="token punctuation">:</span> ZZZ.ZZZ.ZZZ.ZZZ<br>      <span class="token key atrule">nameservers</span><span class="token punctuation">:</span><br>        <span class="token key atrule">addresses</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>8.8.8.8<span class="token punctuation">,</span> 8.8.4.4<span class="token punctuation">]</span></code></pre>
+<p>where,</p>
+<ul>
+<li><code>&lt;name&gt;</code> is your NIC name</li>
+<li><code>XXX.XXX.XXX.XXX</code> is your Static IP</li>
+<li><code>YY</code> is your Netmask</li>
+<li><code>ZZZ.ZZZ.ZZZ.ZZZ</code> is your Default Gateway</li>
+</ul>
+<h2>Testing and Applying Changes<a id="testing-and-applying-changes" href="#testing-and-applying-changes" role="button" aria-label="Link to Testing and Applying Changes."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> netplan try</code></pre>
+<p>If there are no errors press <code>Enter</code> to apply the changes.</p>
+
+  
+  
+    
+    
+      
+    <hr>
+
+    <div class="contained position-relative">
+      
+        <div class="prev">
+          PREVIOUS
+          <a href="/blog/blendit/">
+            <div>Version Control for Non-Textual Files &amp; the Story of Blendit</div>
+          </a>
+        </div>
+      
+          
+      
+      <div class="next">
+        NEXT
+        <a href="/blog/wake-on-lan-setup/">
+          <div>Setting Up Wake On LAN in Ubuntu</div>
+        </a>
+      </div>
+      
+    </div>
+
+  
 </div>
+
+
     
   </main>
 
