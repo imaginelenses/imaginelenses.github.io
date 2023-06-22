@@ -2,6 +2,11 @@
     --containedWidth: 50vw;
 }
 
+.nav-item {
+    font-size: var(--bs-nav-link-font-size);
+
+}
+
 .navbar-brand {
     font-size: 32px;
     letter-spacing: 1.5px;
@@ -51,24 +56,23 @@ h2, h3 {
     }
 }
 
+h3 {
+    margin-top: min(2.5%, 20px);
+}
+
 h2:hover, h3:hover {
     a[id] > svg {
         scale: 100%;
     }
 }
 
-h2::after, h3::after {
+h2::after {
     content: '';
     display: block;
     margin: 10px 0px 30px 0px;
     height: 1px;
     width: 100%;
     background: var(--bs-gray-500);
-}
-
-h3::after {
-    margin-bottom: 10px;
-    background: var(--bs-gray-400);
 }
 
 h4 {
@@ -88,7 +92,7 @@ li > h4 {
     overflow: auto hidden;
 }
 
-p {
+p, li {
     font-size: 1.5em;
     text-align: justify;
 }
@@ -116,15 +120,46 @@ a[style]::before {
 }
 
 pre {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    gap: 0.5em;
+    justify-content: space-between;
+    align-items: start;
     margin-bottom: 20px !important;
     background-color: black !important;
+}
+
+pre::after {
+    content: '';
+    display: inline-block;
+    height: 1.3em;
+    aspect-ratio: 1;
+    margin-top: 0.25em;
+    opacity: 0;
+    transition: 700ms;
+    cursor: pointer;
+    background: url(/media/icons/clipboard.svg);
+    background-repeat: no-repeat;
+}
+
+pre[data-copied]::after {
+    transition: 700ms;
+    cursor: default;
+    background: url(/media/icons/check2.svg);
+}
+
+pre:hover::after {
+    opacity: 1;
+    transition: 200ms;
 }
 
 code {
     padding: 2px 5px;
     user-select: all;
     color: var(--bs-gray-900);
-    border-radius: 5px;
+    border-radius: 5%;
+    overflow-x: scroll;
     background: var(--bs-gray-300);
 }
 

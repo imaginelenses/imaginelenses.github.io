@@ -6,7 +6,7 @@ description: 'A list of tags of topics of Blogs.'
 
 <div class="content">
   <h2>{{ collections.allTags | length }} Tags</h2>
-  <div class="d-flex flex-row flex-wrap justify-content-center">
+  <div class="contained d-flex flex-row flex-wrap justify-content-center gap-2">
     {% for tag in collections.allTags %}
       {% set tagUrl %}/tags/{{ tag | slugify }}{% endset %}
       <a href="{{ tagUrl }}" class="tag">{{ tag }}</a>

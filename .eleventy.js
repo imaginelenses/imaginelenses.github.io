@@ -148,7 +148,10 @@ module.exports = (config) => {
         return filterTagList([...tags])
     })
 
-    config.addPassthroughCopy('./src/media/favicon.ico')
+    // Icons
+    config.addPassthroughCopy('./src/media/icons')
+    
+    // CNAME
     config.addPassthroughCopy('./src/CNAME')
     
     // Scripts
@@ -164,6 +167,12 @@ module.exports = (config) => {
     ))
     config.addShortcode('year', () => `${new Date().getFullYear()}`)
 
+    // Dev Server Config
+    config.setServerOptions({
+        module: "@11ty/eleventy-server-browsersync",
+        open: "external"
+    })
+    
     return {
         dir: {
             input: 'src',

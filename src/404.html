@@ -14,7 +14,7 @@ description: "Error 404 - Page Not Found"
   <p>Sorry, the page you're looking for is not found!</p>
 
   {% set num = 4 %}
-  {% set posts = collections.posts | limit(num) %}
+  {% set posts = collections.posts | reverse | limit(num) %}
 
   <p>Consider reading one of these {{ posts | length }} blog posts instead.</p>
 
@@ -22,7 +22,7 @@ description: "Error 404 - Page Not Found"
 
   <div class="blogList contained">
     <ol reversed>
-      {% for post in posts | reverse %}
+      {% for post in posts %}
       <li>
         <h4>
           <a href="{{ post.url | url }}">{{ post.data.title }}</a>
