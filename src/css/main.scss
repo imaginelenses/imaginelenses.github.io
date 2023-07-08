@@ -44,11 +44,6 @@ h1, h2, h3, h4, h5, h6, p, ol, ul, hr, time,
     box-shadow: var(--boxShadow);
 }
 
-img {
-    margin-block: 1rem;
-    box-shadow: var(--boxShadow);
-}
-
 h2, h3, summary {
     margin-top: min(5%, 40px);
     text-transform: uppercase;
