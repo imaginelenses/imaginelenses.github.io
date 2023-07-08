@@ -1,5 +1,6 @@
 :root {
     --containedWidth: 50vw;
+    --boxShadow:  0 .5rem 1rem rgba(0, 0, 0, .15);
 }
 
 .nav-item {
@@ -24,7 +25,9 @@
     color: var(--bs-gray-800);
 }
 
-h1, h2, h3, h4, h5, h6, p, ol, ul, hr, time, .contained, pre, blockquote {
+h1, h2, h3, h4, h5, h6, p, ol, ul, hr, time,
+.contained, pre, blockquote, summary {
+    height: auto;
     width: var(--containedWidth) !important;
     max-width: 800px; 
 }
@@ -38,10 +41,15 @@ h1, h2, h3, h4, h5, h6, p, ol, ul, hr, time, .contained, pre, blockquote {
     width: min(95vw, calc(var(--containedWidth) + 10vw));
     margin-top: 1rem;
     margin-bottom: 3rem;
-    box-shadow:  0 .5rem 1rem rgba(black, .15);
+    box-shadow: var(--boxShadow);
 }
 
-h2, h3 {
+img {
+    margin-block: 1rem;
+    box-shadow: var(--boxShadow);
+}
+
+h2, h3, summary {
     margin-top: min(5%, 40px);
     text-transform: uppercase;
     font-weight: 500;
@@ -54,6 +62,12 @@ h2, h3 {
         scale: 0;
         transition: scale ease-in 50ms;
     }
+}
+
+summary {
+    font-size: larger;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 h3 {
@@ -190,6 +204,32 @@ blockquote::before {
 
 blockquote::after {
     content: close-quote;
+}
+
+.tableWrapper {
+    @extend .fullWidth;
+    box-shadow: none;
+    overflow: auto;
+}
+
+table {
+    border-collapse: collapse;
+    
+    th {
+        text-transform: uppercase;
+        border-style: solid;
+        border-color: var(--bs-gray-500);
+        border-width: 0;
+        border-bottom-width: 1px;
+    }
+
+    th, td {
+        padding: 1rem;
+    }
+
+    thead > tr, tr:nth-of-type(2n) {
+        background-color: rgb(248, 248, 248);
+    }
 }
 
 footer {

@@ -1,0 +1,37 @@
+{
+	"Blog Snippet": {
+		"prefix": ["blog"],
+		"body": [
+			"---",
+			"title: '${1:title}'",
+			"tags:",
+			" - ${2:test}",
+			"description: ${3}",
+			"---",
+			"",
+			"${0}"
+		],
+		"description": "New blog metadata.",
+		"isFileTemplate": true,
+		"scope": "markdown",
+	},
+	"Blog Title Snippet": {
+		"prefix": ["blog_title", "b_title"],
+		"body": ["${1|##, ###, ####|} {% title \"${2:title}\" %}"],
+		"scope": "markdown",
+	},
+	"Blog Image Snippet": {
+		"prefix": ["blog_image", "b_image"],
+		"body": [
+			"<div>",
+			"{% image ${1:imgSrc}, \"${2}\", \"${3:fullWidth}\" %}",
+			"</div>"
+		],
+		"scope": "markdown",
+	},
+	"Blog Link Snippet": {
+		"prefix": ["blog_link", "b_link"],
+		"body": ["{% link \"${1:https://imaginelenses.com/}\", \"${2:imaginelenses}\" %}"],
+		"scope": "markdown, html",
+	},	
+}
