@@ -4,7 +4,7 @@
   "description": "Imaginelenses Website",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "DEVELOPMENT=true eleventy"
+    "build": "PRODUCTION=true eleventy"
   },
   "keywords": [],
   "author": "imaginelenses <imaginelenses@gmail.com> (https://www.imaginelenses.com/)",
