@@ -143,10 +143,10 @@
   </div>
 
   <p>A custom Person Card for the <a href="https://ui-lovelace-minimalist.github.io/UI/">UI Lovelace Minimalist</a> theme for <a href="https://www.home-assistant.io/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.home-assistant.io/');">Home Assistant</a>.</p>
-<div>
+<div class="contained">
 <picture><source type="image/webp" srcset="/media/custom_card_person_info_small_dark-484w.webp 484w" sizes="100vw"><source type="image/jpeg" srcset="/media/custom_card_person_info_small_dark-484w.jpeg 484w" sizes="100vw"><img src="/media/custom_card_person_info_small_dark-484w.jpeg" width="484" height="120" alt="custom_card_person_info_small_dark" class="" data-index="" loading="lazy" decoding="async"></picture>
 </div>
-<div>
+<div class="contained">
 <picture><source type="image/webp" srcset="/media/custom_card_person_info_small_light-484w.webp 484w" sizes="100vw"><source type="image/jpeg" srcset="/media/custom_card_person_info_small_light-484w.jpeg 484w" sizes="100vw"><img src="/media/custom_card_person_info_small_light-484w.jpeg" width="484" height="120" alt="custom_card_person_info_small_light" class="" data-index="" loading="lazy" decoding="async"></picture>
 </div>
 <br>
@@ -243,11 +243,6 @@
 </tbody>
 </table>
 </div>
-<style>
-  tbody > tr > td:nth-child(2) {
-    font-family: monospace;
-  }
-</style>
 <h2>Usage<a id="usage" href="#usage" role="button" aria-label="Link to Usage."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></h2>
 <p>Download the UI Lovelace Minimalist theme from <a href="https://hacs.xyz/docs/setup/download" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fhacs.xyz/');">Home Assistant Community Store</a> (HACS).</p>
 <p>Add the following to any view in <code>config/ui_lovelace_minimalist/dashboard/views/</code> folder.</p>
@@ -264,7 +259,25 @@
 <li>Author: Imaginelenses &lt;@imaginelenses&gt;</li>
 <li>Based on <a href="https://ui-lovelace-minimalist.github.io/UI/usage/custom_cards/custom_card_person_info/"><code>person info card</code></a> by Jordan Janzen &lt;@jordandrako&gt;</li>
 </ul>
+<style>
+  @media only screen and (max-width: 1400px) {
+    div[class="contained"] img {
+      height: auto;
+      width: var(--containedWidth) !important;
+      max-width: 800px; 
+    }
+  }
+  
+  div[class="contained"] {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 
+  tbody > tr > td:nth-child(2) {
+    font-family: monospace;
+  }
+</style>
   
   
     
