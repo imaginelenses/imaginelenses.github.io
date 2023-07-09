@@ -9,10 +9,10 @@ description: "A custom Person Card for the UI Lovelace Minimalist theme for Home
 
 A custom Person Card for the [UI Lovelace Minimalist](https://ui-lovelace-minimalist.github.io/UI/) theme for {% link "https://www.home-assistant.io/", "Home Assistant" %}.
 
-<div>
+<div class="contained">
 {% image imgSrc, "custom_card_person_info_small_dark.png", "" %}
 </div>
-<div>
+<div class="contained">
 {% image imgSrc, "custom_card_person_info_small_light.png", "" %}
 </div>
 <br>
@@ -38,13 +38,6 @@ A custom Person Card for the [UI Lovelace Minimalist](https://ui-lovelace-minima
 | ulm_card_battery_color_battery_level_ok      | var(--google-green)  | &#10006; | Color of icon if battery level is not within the 'danger' or 'warning' zone.
 
 </div>
-
-<style>
-  tbody > tr > td:nth-child(2) {
-    font-family: monospace;
-  }
-</style>
-
 
 ## {% title "Usage" %}
 
@@ -225,3 +218,23 @@ Restart Home Assistant.
 - Version: 1.0.0
 - Author: Imaginelenses <@imaginelenses>
 - Based on [`person info card`](https://ui-lovelace-minimalist.github.io/UI/usage/custom_cards/custom_card_person_info/) by Jordan Janzen <@jordandrako>
+
+<style>
+  @media only screen and (max-width: 1400px) {
+    div[class="contained"] img {
+      height: auto;
+      width: var(--containedWidth) !important;
+      max-width: 800px; 
+    }
+  }
+  
+  div[class="contained"] {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  tbody > tr > td:nth-child(2) {
+    font-family: monospace;
+  }
+</style>

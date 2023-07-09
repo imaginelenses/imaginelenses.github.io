@@ -90,7 +90,9 @@ module.exports = (config) => {
     })
 
     // Cache Key
-    const cacheKey = DateTime.now().setZone('Asia/Kolkata').toISODate().replaceAll('-', '')
+    const cacheKey = process.env.PRODUCTION ? 
+        DateTime.now().setZone('Asia/Kolkata').toISO().replaceAll(/[-, :, +, .]/g, '') :
+        DateTime.now().setZone('Asia/Kolkata').toISODate().replaceAll('-', '')
     config.addGlobalData('cacheKey', () => (cacheKey))
     
     // OpenGraph images
@@ -99,7 +101,7 @@ module.exports = (config) => {
         return (
         '<picture>' +
           `<source type="image/webp" srcset="https://v1.opengraph.11ty.dev/${url}/medium/webp/_${cacheKey}/">` +
-          `<source type="image/webp" srcset="https://v1.opengraph.11ty.dev/${url}/medium/jpeg/_${cacheKey}/">` +
+          `<source type="image/jpeg" srcset="https://v1.opengraph.11ty.dev/${url}/medium/jpeg/_${cacheKey}/">` +
           `<img src="https://v1.opengraph.11ty.dev/${url}/small/jpeg/_${cacheKey}/" alt="Preview of ${link}" width="650" height="341" class="ogImage" ${(lazy) ? 'loading="lazy" decoding="async"' : ''}>` +
         '</picture>'
         )
