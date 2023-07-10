@@ -90,9 +90,7 @@ module.exports = (config) => {
     })
 
     // Cache Key
-    const cacheKey = process.env.PRODUCTION ? 
-        DateTime.now().setZone('Asia/Kolkata').toISO().replaceAll(/[-, :, +, .]/g, '') :
-        DateTime.now().setZone('Asia/Kolkata').toISODate().replaceAll('-', '')
+    const cacheKey = DateTime.now().setZone('Asia/Kolkata').toISO().replaceAll(/[-, :, +, .]/g, '')
     config.addGlobalData('cacheKey', () => (cacheKey))
     
     // OpenGraph images
