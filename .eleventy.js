@@ -151,9 +151,6 @@ module.exports = (config) => {
     // Icons
     config.addPassthroughCopy('./src/media/icons')
     
-    // CNAME
-    config.addPassthroughCopy('./src/CNAME')
-    
     // Scripts
     config.addPassthroughCopy('./src/js')
     config.addWatchTarget('./src/js')

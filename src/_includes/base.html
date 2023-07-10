@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Imaginelenses{% if title %}{{ [" - ", title] | join }}{% endif %}</title>
-{# 
+
   {% if production %}
   <meta
     http-equiv="Content-Security-Policy"
@@ -20,7 +20,7 @@
       child-src 'none';
     " 
   />
-  {% endif %} #}
+  {% endif %}
 
   <meta name="generator" content="{{ eleventy.generator }}">
   <meta name="description" content="{{ description }}">
