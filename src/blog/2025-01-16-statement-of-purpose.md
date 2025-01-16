@@ -3,7 +3,7 @@ title: 'The pursuit of life-changing pedagogy'
 tags:
     - 'grad school'
     - 'writing'
-description: 'How the pursuit of life-changing pedagogy and the scientific method is what led me to the Computer Engineering (M.S.) program at New York University.'
+description: 'The pursuit of life-changing pedagogy and the scientific method is what led me to the Computer Engineering (M.S.) program at New York University.'
 ---
 
 <div>
