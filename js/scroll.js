@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ─── SCROLL-DOWN USES NATIVE SMOOTH SCROLL ───────────────────────────────
+    // Browser's built-in smooth scroll is subtle, simple, and OS-optimized.
+
     // Set navbar height as CSS variable for layout calculations
     const nav = document.querySelector('nav')
     if (nav) {
@@ -40,19 +43,43 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-    // Scroll-down button
+    // Scroll-down / scroll-up dual-mode button
     const scrollBtn = document.getElementById('scrollDown')
     if (scrollBtn) {
+        const footer = document.querySelector('footer')
+
         scrollBtn.addEventListener('click', () => {
-            scrollBtn.classList.add('hidden')
-            window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })
+            if (scrollBtn.classList.contains('is-up')) {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+            } else {
+                const sections = Array.from(document.querySelectorAll('.section'))
+                const next = sections.find(s => s.getBoundingClientRect().top > 1)
+                if (next) {
+                    next.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                } else {
+                    window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })
+                }
+            }
         })
 
         document.addEventListener('scroll', () => {
-            if (window.scrollY < 50) {
-                scrollBtn.classList.remove('hidden')
+            const footerVisible = footer && footer.getBoundingClientRect().top < window.innerHeight
+
+            if (footerVisible) {
+                // Footer is in view: fade out
+                scrollBtn.classList.add('faded')
+                scrollBtn.classList.add('is-up')
+            } else {
+                // Footer not in view: show button
+                scrollBtn.classList.remove('faded')
+
+                // Show UP arrow only if user has scrolled down meaningfully
+                if (window.scrollY > 200) {
+                    scrollBtn.classList.add('is-up')
+                } else {
+                    scrollBtn.classList.remove('is-up')
+                }
             }
         }, { passive: true })
     }
-
-})
+});
