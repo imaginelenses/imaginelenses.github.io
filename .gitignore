@@ -107,3 +107,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Zone Identifier files
+*.Zone.Identifier
+gaussian (2).png:Zone.Identifier
+
+# LaTeX build artifacts
+cv.fdb_latexmk
+cv.fls
