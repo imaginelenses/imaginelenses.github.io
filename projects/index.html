@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Imaginelenses - Projects</title>
+  <title>Robotics &amp; Computer Vision Projects | Karthik Shivashankaran</title>
 
   
   <meta
@@ -13,9 +13,9 @@
     content="
       default-src 'self';
       style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css;
-      script-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js https://buttons.github.io/buttons.js;
+      script-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js https://buttons.github.io/buttons.js https://static.cloudflareinsights.com;
       img-src 'self' https://*.imaginelenses.com/ https://*.11ty.dev/ https://i.ytimg.com https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/512px-JavaScript-logo.png https://www.w3.org/html/logo/badge/html5-badge-h-solo.png https://img.icons8.com/color/48/null/c-programming.png data: http://www.w3.org/*;
-      connect-src https://*.github.com;
+      connect-src https://*.github.com https://cloudflareinsights.com;
       frame-src https://imaginelenses.com/ https://www.youtube-nocookie.com/;
       child-src 'none';
     " 
@@ -23,16 +23,17 @@
   
 
   <meta name="generator" content="Eleventy v2.0.1">
-  <meta name="description" content="A collection of projects by Imaginelenses - Karthik Shivashankar.">
+  <meta name="description" content="Portfolio of robotics, computer vision, and motion planning projects by Karthik Shivashankaran (imaginelenses). Features SLAM, Kalman Filters, YOLOv8, and Embedded Systems.">
   <meta name="author" content="Karthik Shivashankar">
   
   
+  <link rel="canonical" href="https://imaginelenses.com/projects/">
   <meta property="og:url" content="https://imaginelenses.com/projects/">
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Imaginelenses">
-  <meta property="og:title" content="Projects">
-  <meta property="og:description" content="A collection of projects by Imaginelenses - Karthik Shivashankar.">
-  <meta property="og:image" content="https://v1.screenshot.11ty.dev/https%3A%2F%2Fimaginelenses.com%2Fprojects%2F/opengraph/_20250205T0716493480530">
+  <meta property="og:site_name" content="Imaginelenses | Karthik Shivashankaran">
+  <meta property="og:title" content="Robotics &amp; Computer Vision Projects | Karthik Shivashankaran">
+  <meta property="og:description" content="Portfolio of robotics, computer vision, and motion planning projects by Karthik Shivashankaran (imaginelenses). Features SLAM, Kalman Filters, YOLOv8, and Embedded Systems.">
+  <meta property="og:image" content="https://v1.screenshot.11ty.dev/https%3A%2F%2Fimaginelenses.com%2Fprojects%2F/opengraph/_20260413T0904465660530">
 
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:site" content="@imaginelenses">
@@ -43,8 +44,8 @@
   <meta property="profile:username" content="imaginelenses">
   <meta property="profile:gender" content="male">
   
-  <meta property="article:published_time" content="2025-02-05T00:00:00.000+05:30">
-  <meta property="article:modified_time" content="2025-02-05T00:00:00.000+05:30">
+  <meta property="article:published_time" content="2026-04-13T00:00:00.000+05:30">
+  <meta property="article:modified_time" content="2026-04-13T00:00:00.000+05:30">
   <meta property="article:author" content="https://imaginelenses.com/">
   <meta property="article:section" content="Technology">
   
@@ -58,13 +59,46 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
   
-  <style>:root{--containedWidth: 50vw;--boxShadow: 0 .5rem 1rem rgba(0, 0, 0, .15)}.nav-item{font-size:var(--bs-nav-link-font-size)}.navbar-brand{font-size:32px;letter-spacing:1.5px;user-select:none}.navbar-toggler:focus{box-shadow:none !important}.content{display:flex;flex-direction:column;align-items:center;color:var(--bs-gray-800)}h1,h2,h3,h4,h5,h6,p,ol,ul,hr,time,.contained,pre,blockquote,summary{height:auto;width:var(--containedWidth) !important;max-width:800px}.navbar-collapse>ul{width:auto !important}.fullWidth,.tableWrapper{height:auto;width:min(95vw,var(--containedWidth) + 10vw);margin-top:1rem;margin-bottom:3rem;box-shadow:var(--boxShadow)}h2,h3,summary{margin-top:min(5%,40px);text-transform:uppercase;font-weight:500;color:var(--bs-gray-900)}h2 a[id]>svg,h3 a[id]>svg,summary a[id]>svg{height:.8em;margin:0 0 .1em 5px;fill:var(--bs-gray-800);scale:0;transition:scale ease-in 50ms}summary{font-size:larger;margin-top:0;margin-bottom:1rem}h3{margin-top:min(2.5%,20px)}h2:hover a[id]>svg,h3:hover a[id]>svg{scale:100%}h2::after{content:"";display:block;margin:10px 0px 30px 0px;height:1px;width:100%;background:var(--bs-gray-500)}h4{margin-top:10px}li>h4{width:auto !important}.title{font-size:5em;font-weight:570;text-transform:uppercase;color:var(--bs-black);line-height:1;overflow:auto hidden}p,li{font-size:1.5em;text-align:justify}a,li>h4{color:var(--bs-gray-800);text-decoration-color:var(--bs-primary);text-transform:none;font-weight:400}a:hover{color:var(--bs-primary)}a[style]::before{content:"";display:inline-block;height:1em;width:1em;margin:0 4px 1px 0;vertical-align:text-bottom;background-image:var(--icon);background-size:contain}pre{display:flex;flex-direction:row;padding:1em;gap:.5em;justify-content:space-between;align-items:start;margin-bottom:20px !important;background-color:#000 !important}pre::after{content:"";display:inline-block;height:1.3em;aspect-ratio:1;margin-top:.25em;opacity:0;transition:700ms;cursor:pointer;background:url(/media/icons/clipboard.svg);background-repeat:no-repeat}pre[data-copied]::after{transition:700ms;cursor:default;background:url(/media/icons/check2.svg)}pre:hover::after{opacity:1;transition:200ms}code{padding:2px 5px;user-select:all;color:var(--bs-gray-900);border-radius:5%;background:var(--bs-gray-300)}blockquote,blockquote>a{font-size:27px;font-style:italic;font-weight:300}blockquote{text-align:justify;padding:5px 15px 5px 10px;border-style:solid;border-width:0;border-left-width:8px;border-color:var(--bs-gray-200);background:var(--bs-gray-100)}blockquote::before,blockquote::after{font-size:30px;font-weight:400;color:var(--bs-gray-500)}blockquote::before{content:open-quote}blockquote::after{content:close-quote}.tableWrapper{box-shadow:none;overflow:auto}table{border-collapse:collapse}table th{text-transform:uppercase;border-style:solid;border-color:var(--bs-gray-500);border-width:0;border-bottom-width:1px}table th,table td{padding:1rem}table thead>tr,table tr:nth-of-type(2n){background-color:#f8f8f8}footer{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;margin:100px 0 20px 0}.social{margin-bottom:15px}.social a{text-decoration:none;margin:0px 5px}.social .bi{height:30px}.social a:hover .bi-linkedin{fill:#0077b5}.social a:hover .bi-github{fill:#000}.social a:hover .bi-youtube{fill:red}@media only screen and (max-width: 1400px){:root{--containedWidth: max(calc(1200px * 0.8), 70vw)}}@media only screen and (max-width: 1200px){:root{--containedWidth: max(calc(600px * 0.95), 80vw)}}@media only screen and (max-width: 600px){:root{--containedWidth: 95vw}.navbar>div{padding-right:0;padding-left:0}.title{font-size:3em}}</style>
+  <style>:root{--containedWidth: 50vw;--boxShadow: 0 .5rem 1rem rgba(0, 0, 0, .15)}.nav-item{font-size:var(--bs-nav-link-font-size)}.navbar-brand{font-size:32px;letter-spacing:1.5px;user-select:none}.navbar-toggler:focus{box-shadow:none !important}.content{display:flex;flex-direction:column;align-items:center;color:var(--bs-gray-800)}h1,h2,h3,h4,h5,h6,p,ol,ul,hr,time,.contained,pre,blockquote,summary{height:auto;width:var(--containedWidth) !important;max-width:800px}.navbar-collapse>ul{width:auto !important}.fullWidth,.tableWrapper{height:auto;width:min(95vw,var(--containedWidth) + 10vw);margin-top:1rem;margin-bottom:3rem;box-shadow:var(--boxShadow)}h2,h3,summary{margin-top:min(5%,40px);text-transform:uppercase;font-weight:500;color:var(--bs-gray-900)}h2 a[id]>svg,h3 a[id]>svg,summary a[id]>svg{height:.8em;margin:0 0 .1em 5px;fill:var(--bs-gray-800);scale:0;transition:scale ease-in 50ms}h2 a[id]:focus(:focus-visible),h3 a[id]:focus(:focus-visible),summary a[id]:focus(:focus-visible){outline:none}summary{font-size:larger;margin-top:0;margin-bottom:1rem}h3{margin-top:min(2.5%,20px)}h2:hover a[id]>svg,h3:hover a[id]>svg{scale:100%}h2::after{content:"";display:block;margin:10px 0px 30px 0px;height:1px;width:100%;background:var(--bs-gray-500)}h4{margin-top:10px}li>h4{width:auto !important}.title{font-size:5em;font-weight:570;text-transform:uppercase;color:var(--bs-black);line-height:1;overflow:auto hidden}p,li{font-size:1.5em;text-align:justify}a,li>h4{color:var(--bs-gray-800);text-decoration-color:var(--bs-primary);text-transform:none;font-weight:400}a:hover{color:var(--bs-primary)}a[style]::before{content:"";display:inline-block;height:1em;width:1em;margin:0 4px 1px 0;vertical-align:text-bottom;background-image:var(--icon);background-size:contain}pre{display:flex;flex-direction:row;padding:1em;gap:.5em;justify-content:space-between;align-items:start;margin-bottom:20px !important;background-color:#000 !important}pre::after{content:"";display:inline-block;height:1.3em;aspect-ratio:1;margin-top:.25em;opacity:0;transition:700ms;cursor:pointer;background:url(/media/icons/clipboard.svg);background-repeat:no-repeat}pre[data-copied]::after{transition:700ms;cursor:default;background:url(/media/icons/check2.svg)}pre:hover::after{opacity:1;transition:200ms}code{padding:2px 5px;user-select:all;color:var(--bs-gray-900);border-radius:5%;background:var(--bs-gray-300)}blockquote,blockquote>a{font-size:27px;font-style:italic;font-weight:300}blockquote{text-align:justify;padding:5px 15px 5px 10px;border-style:solid;border-width:0;border-left-width:8px;border-color:var(--bs-gray-200);background:var(--bs-gray-100)}blockquote::before,blockquote::after{font-size:30px;font-weight:400;color:var(--bs-gray-500)}blockquote::before{content:open-quote}blockquote::after{content:close-quote}.tableWrapper{box-shadow:none;overflow:auto}table{border-collapse:collapse}table th{text-transform:uppercase;border-style:solid;border-color:var(--bs-gray-500);border-width:0;border-bottom-width:1px}table th,table td{padding:1rem}table thead>tr,table tr:nth-of-type(2n){background-color:#f8f8f8}footer{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;margin:100px 0 20px 0}.social{margin-bottom:15px}.social a{text-decoration:none;margin:0px 5px}.social .bi{height:30px}.social a:hover .bi-linkedin{fill:#0077b5}.social a:hover .bi-github{fill:#000}.social a:hover .bi-youtube{fill:red}@media only screen and (max-width: 1400px){:root{--containedWidth: max(calc(1200px * 0.8), 70vw)}}@media only screen and (max-width: 1200px){:root{--containedWidth: max(calc(600px * 0.95), 80vw)}}@media only screen and (max-width: 600px){:root{--containedWidth: 95vw}.navbar>div{padding-right:0;padding-left:0}.title{font-size:3em}}</style>
   
-  <style>.projectTitleContainer{display:flex;flex-direction:row;justify-content:space-between;flex-wrap:wrap}.projectTitle{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.date{margin-top:auto;text-align:end;font-size:large;font-weight:500;text-transform:uppercase;white-space:nowrap}.iframeContainer{margin-bottom:30px}.iframeContainer iframe{margin:0}.iframeContainer::after{content:"Click the above window before interaction.";display:block;width:100%;text-align:center;margin-top:-5px;color:var(--bs-gray-600)}iframe{--iframeWidth: calc(var(--containedWidth) + 10vw);width:var(--iframeWidth);height:calc(var(--iframeWidth)*.5625);margin-bottom:30px;box-shadow:0 .5rem 1rem rgba(0,0,0,.15)}.techIcon{height:1em;width:1em;margin:0 4px 2px 0;vertical-align:text-bottom}.html5{margin-bottom:1px}@media only screen and (max-width: 600px){iframe{--iframeWidth: 95vw}}</style>
+  <style>.projectTitleContainer{display:flex;flex-direction:row;justify-content:space-between;flex-wrap:wrap}.projectTitle{flex:1;min-width:0;word-break:break-word}.date{margin-top:auto;text-align:end;font-size:large;font-weight:500;text-transform:uppercase;white-space:nowrap;flex-shrink:0}.iframeContainer{margin-bottom:30px}.iframeContainer iframe{margin:0}.iframeContainer::after{content:"Click the above window before interaction.";display:block;width:100%;text-align:center;margin-top:-5px;color:var(--bs-gray-600)}iframe{--iframeWidth: calc(var(--containedWidth) + 10vw);width:var(--iframeWidth);height:calc(var(--iframeWidth)*.5625);margin-bottom:30px;box-shadow:0 .5rem 1rem rgba(0,0,0,.15)}.techIcon{height:1em;width:1em;margin:0 4px 2px 0;vertical-align:text-bottom}.html5{margin-bottom:1px}@media only screen and (max-width: 600px){iframe{--iframeWidth: 95vw}}</style>
   
 
   
   <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Karthik Shivashankaran",
+    "url": "https://imaginelenses.com",
+    "jobTitle": "Full-Stack Robotics Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "New York University"
+    },
+    "alumniOf": "Acharya Institute of Technology",
+    "sameAs": [
+      "https://github.com/imaginelenses",
+      "https://www.linkedin.com/in/imaginelenses"
+    ],
+    "knowsAbout": [
+      "Robotics",
+      "Computer Vision Engineer",
+      "Motion/path planning engineer",
+      "Sensor Fusion",
+      "SLAM",
+      "State Estimation",
+      "C++",
+      "Python",
+      "Embedded Systems",
+      "Kalman Filter",
+      "YOLOv8",
+      "3D Gaussian Splatting"
+    ]
+  }
+  </script>
 
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -93,15 +127,6 @@
                     class="nav-link active" aria-current="page" href="#">
                   
                   Projects
-                </a>
-              </li>
-            
-              <li class="nav-item">
-                <a 
-                  
-                    class="nav-link" href="/photo/">
-                  
-                  Photography
                 </a>
               </li>
             
@@ -152,7 +177,7 @@
   <h2>
     <div class="projectTitleContainer">
       <div class="projectTitle">
-        7 Projects
+        11 Projects
       </div>
       <div class="date">
         <a class="github-button" href="https://github.com/imaginelenses" data-color-scheme="no-preference: light; light: light; dark: light;" data-size="large" data-show-count="true" aria-label="Follow @imaginelenses on GitHub">Follow</a>
@@ -161,6 +186,22 @@
   </h2>
   
   <ol reversed>
+    
+      <li>
+        <h4><a href="#mobile-robot-state-estimation">Mobile Robot State Estimation</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#3d-line-of-sight-audit-system-for-intersections">3D Line-of-Sight Audit System for Intersections</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#rl-locomotion-and-trajectory-optimization">RL Locomotion &amp; Trajectory Optimization</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#smart-switch-esp32">Smart Switch (ESP32)</a></h4>
+      </li>
     
       <li>
         <h4><a href="#blendit">Blendit</a></h4>
@@ -195,7 +236,408 @@
   
     <h2>
       <div class="projectTitleContainer">
-        <div class="projectTitle">Blendit<a id="blendit" href="#blendit" role="button" aria-label="Link to Blendit."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="projectTitle">Mobile Robot State Estimation<a id="mobile-robot-state-estimation" href="#mobile-robot-state-estimation" role="button" aria-label="Link to Mobile Robot State Estimation."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Mar 2026</div>
+      </div>
+    </h2>
+    
+    <p>Implementation and benchmarking of an Extended Kalman Filter (EKF) and a Particle Filter (PF) for mobile robot localization, fusing wheel odometry, IMU, and landmark observations.</p>
+<div>
+<picture><source type="image/webp" srcset="/media/pf-1000w.webp 1000w, /media/pf-1500w.webp 1500w" sizes="100vw"><source type="image/jpeg" srcset="/media/pf-1000w.jpeg 1000w, /media/pf-1500w.jpeg 1500w" sizes="100vw"><img src="/media/pf-1000w.jpeg" width="1500" height="678" alt="pf" class="fullWidth" data-index="" ></picture>
+</div>
+<p>The EKF linearizes the nonlinear motion and observation models around the current estimate at each timestep, achieving a good balance of accuracy and computational cost. The PF uses 3,000 weighted particles to represent the full posterior distribution, enabling recovery from large localization errors without re-initialization.</p>
+<p><strong>Key Results:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EKF positional RMSE</td>
+<td>4.14 cm</td>
+</tr>
+<tr>
+<td>EKF correction acceptance rate</td>
+<td>88.2 %</td>
+</tr>
+<tr>
+<td>PF particle count</td>
+<td>3,000</td>
+</tr>
+<tr>
+<td>PF position spread (σ)</td>
+<td>0.27 cm</td>
+</tr>
+<tr>
+<td>PF heading error (σ)</td>
+<td>0.90°</td>
+</tr>
+<tr>
+<td>PF recovery time from 1 m / 90° error</td>
+<td>0.63 s</td>
+</tr>
+</tbody>
+</table>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+<a href="https://www.python.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.python.org/');">Python</a>
+
+        
+        
+        
+          |
+        
+              
+        
+          
+C
+
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://docs.ros.org/en/humble/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fdocs.ros.org/');">ROS 2</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://opencv.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fopencv.org/');">OpenCV</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://numpy.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fnumpy.org/');">NumPy</a>
+          
+        
+        
+        
+      
+    </p>
+
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">3D Line-of-Sight Audit System for Intersections<a id="3d-line-of-sight-audit-system-for-intersections" href="#3d-line-of-sight-audit-system-for-intersections" role="button" aria-label="Link to 3D Line-of-Sight Audit System for Intersections."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Dec 2025</div>
+      </div>
+    </h2>
+    
+    <p>A multi-camera 3D visibility analysis system developed as a group project, designed to audit pedestrian and vehicle sightlines at urban intersections and detect occlusions before they cause accidents.</p>
+<div>
+<picture><source type="image/webp" srcset="/media/gaussian-1000w.webp 1000w, /media/gaussian-1500w.webp 1500w" sizes="100vw"><source type="image/jpeg" srcset="/media/gaussian-1000w.jpeg 1000w, /media/gaussian-1500w.jpeg 1500w" sizes="100vw"><img src="/media/gaussian-1000w.jpeg" width="1500" height="612" alt="gaussian" class="fullWidth" data-index="" ></picture>
+</div>
+<p>My primary contribution was the 3D reconstruction pipeline: eight calibrated cameras at 30 FPS stream frames over UDP to a central pipeline, reconstructing a 1.34-million-point 3D point cloud of the intersection using Structure-from-Motion and 3D Gaussian Splatting. The team's broader system layers YOLOv8 with ByteTrack on top for per-camera detection and consistent object IDs across frames. Visibility rays are cast through the point cloud for each tracked agent, and per-frame line-of-sight scores are aggregated into a spatial heatmap of occlusion risk.</p>
+<p><strong>Key Results:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Point cloud size</td>
+<td>1.34 M points</td>
+</tr>
+<tr>
+<td>Detection precision</td>
+<td>&gt; 90 %</td>
+</tr>
+<tr>
+<td>Detection recall</td>
+<td>&gt; 85 %</td>
+</tr>
+<tr>
+<td>Mean visibility score</td>
+<td>0.973</td>
+</tr>
+<tr>
+<td>Earlier hazard detection vs. 2D baseline</td>
+<td>~12.2 s</td>
+</tr>
+<tr>
+<td>Camera count / frame rate</td>
+<td>8 cameras @ 30 FPS</td>
+</tr>
+</tbody>
+</table>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+<a href="https://www.python.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.python.org/');">Python</a>
+
+        
+        
+        
+          |
+        
+              
+        
+          C++
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://docs.ultralytics.com/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fdocs.ultralytics.com/');">YOLOv8</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://github.com/ifzhang/ByteTrack" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fgithub.com/');">ByteTrack</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://www.open3d.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.open3d.org/');">Open3D</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Frepo-sam.inria.fr/');">Gaussian Splatting</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://colmap.github.io/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fcolmap.github.io/');">SfM</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fdocs.opencv.org/');">ArUco</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://opencv.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fopencv.org/');">OpenCV</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          UDP
+        
+        
+        
+      
+    </p>
+
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">RL Locomotion & Trajectory Optimization<a id="rl-locomotion-and-trajectory-optimization" href="#rl-locomotion-and-trajectory-optimization" role="button" aria-label="Link to RL Locomotion & Trajectory Optimization."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Dec 2024</div>
+      </div>
+    </h2>
+    
+    <p>Trained a Proximal Policy Optimization (PPO) agent in a custom Gymnasium simulation environment for continuous locomotion tasks, benchmarked against Sequential Quadratic Programming (SQP) trajectory optimization.</p>
+<p>A custom Gymnasium environment was built to simulate the robot dynamics, reward shaping, and episode resets. The PPO agent was trained with Stable-Baselines3 using entropy regularization and clipped surrogate objectives. Performance was compared against an SQP-based trajectory planner operating on the same dynamics model, evaluating task completion rate, energy efficiency, and generalization to perturbed initial conditions.</p>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+<a href="https://www.python.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.python.org/');">Python</a>
+
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://stable-baselines3.readthedocs.io/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fstable-baselines3.readthedocs.io/');">Stable-Baselines3</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://gymnasium.farama.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fgymnasium.farama.org/');">Gymnasium</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://numpy.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fnumpy.org/');">NumPy</a>
+          
+        
+        
+        
+      
+    </p>
+
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">Smart Switch (ESP32)<a id="smart-switch-esp32" href="#smart-switch-esp32" role="button" aria-label="Link to Smart Switch (ESP32)."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Aug 2023</div>
+      </div>
+    </h2>
+    
+    <p>A custom ESP32-based smart switch that integrates with Home Assistant over local LAN, replacing cloud-dependent commercial switches to eliminate latency and privacy concerns.</p>
+<p>The firmware runs on the ESP32 and communicates over the local network using the Home Assistant WebSocket API. By keeping all traffic on the LAN, the switch responds in under 1 ms — compared to 80–200 ms round-trip through cloud APIs. The Home Assistant integration is configured via YAML and exposed as a standard <code>switch</code> entity. A small JavaScript dashboard was built for direct browser-based control without Home Assistant.</p>
+<p><strong>Key Results:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LAN round-trip latency</td>
+<td>&lt; 1 ms</td>
+</tr>
+<tr>
+<td>Cloud API latency (replaced)</td>
+<td>80–200 ms</td>
+</tr>
+<tr>
+<td>Units deployed</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+            <a href="https://www.espressif.com/en/products/socs/esp32" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.espressif.com/');">ESP32</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://www.home-assistant.io/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.home-assistant.io/');">Home Assistant</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          YAML
+        
+        
+        
+          |
+        
+              
+        
+          JavaScript
+        
+        
+        
+      
+    </p>
+
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">Blendit<a id="blendit" href="#blendit" role="button" aria-label="Link to Blendit."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a><span class="projectBadge"><a class="github-button" href="https://github.com/imaginelenses/blendit" data-icon="octicon-star" data-show-count="true" aria-label="Star imaginelenses/blendit on GitHub">Star</a></span></div>
         <div class="date">Aug 2022 - Sep 2022</div>
       </div>
     </h2>
@@ -216,6 +658,7 @@ At the Blender Institute / Blender Animation Studio we use Subversion for our pr
 <p>In theory the size of the entire project should be lower than using any other VSC.</p>
 
 
+    <br>
     <p>
       <strong>Tech Stack:</strong>&nbsp;
       
@@ -277,15 +720,14 @@ At the Blender Institute / Blender Animation Studio we use Subversion for our pr
 <p>Watch this movie if you've ever wondered why there are 12 'E' tiles in game <a href="https://en.wikipedia.org/wiki/Scrabble" target="_blank">Scrabble</a>!</p>
 
 
+    <br>
     <p>
       <strong>Tech Stack:</strong>&nbsp;
       
               
         
           
-<a href="https://reactjs.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Freactjs.org/');">React</a> (
-<img class="techIcon js" width="512" alt="JavaScript Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/512px-JavaScript-logo.png">JavaScript
-)
+<a href="https://reactjs.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Freactjs.org/');">React</a> (JavaScript)
 
         
         
@@ -327,6 +769,7 @@ At the Blender Institute / Blender Animation Studio we use Subversion for our pr
 <lite-youtube videoid="rpB6zQNsbQU" style="background-image: url('https://i.ytimg.com/vi/rpB6zQNsbQU/maxresdefault.jpg'); max-width: unset !important;"><button type="button" class="lty-playbtn"><span class="lyt-visually-hidden">Play Video: Seam Carving | Week 2 | 18.S191 MIT Fall 2020 | Grant Sanderson</span></button></lite-youtube>
 </div>
 
+    <br>
     <p>
       <strong>Tech Stack:</strong>&nbsp;
       
@@ -377,6 +820,7 @@ At the Blender Institute / Blender Animation Studio we use Subversion for our pr
 </ul>
 
 
+    <br>
     <p>
       <strong>Tech Stack:</strong>&nbsp;
       
@@ -414,6 +858,7 @@ mobile device.</p>
 <p><a href="https://www.kalmanfilter.net/default.aspx" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.kalmanfilter.net/');">Kalmanfilter.net</a> is a great place to learn about Kalman filters.</p>
 
 
+    <br>
     <p>
       <strong>Tech Stack:</strong>&nbsp;
       
@@ -472,6 +917,7 @@ Development of a purely <a href="https://en.wikipedia.org/wiki/Inertial_measurem
 </ul>
 
 
+    <br>
     <p>
       <strong>Tech Stack:</strong>&nbsp;
       
@@ -508,9 +954,7 @@ C
               
         
           
-<a href="https://reactnative.dev/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Freactnative.dev/');">React Native</a> (
-<img class="techIcon js" width="512" alt="JavaScript Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/512px-JavaScript-logo.png">JavaScript
-)
+<a href="https://reactnative.dev/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Freactnative.dev/');">React Native</a> (JavaScript)
 
         
         
@@ -548,6 +992,7 @@ C
 <p>OneProjectFile aims to bring basic version control functionality to a wide range of filetypes. And this is achieved by storing all the files in the user's Google Drive.</p>
 
 
+    <br>
     <p>
       <strong>Tech Stack:</strong>&nbsp;
       
@@ -565,9 +1010,7 @@ C
         
               
         
-          
-<img class="techIcon js" width="512" alt="JavaScript Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/512px-JavaScript-logo.png">JavaScript
-
+          JavaScript
         
         
         
@@ -631,7 +1074,8 @@ C
       </a>
     </div>
     
-    &#169; 2025 Imaginelenses
+    <div>&#169; 2026 &nbsp;|&nbsp; Karthik Shivashankaran &nbsp;|&nbsp; Imaginelenses</div>
+    <div>Brooklyn, NY &nbsp;|&nbsp; Open to Opportunities</div>
   </footer>
 
   <script src="/js/copy.js"></script>
