@@ -19,7 +19,7 @@ jobs:
           cache: 'npm'
 
       - name: Install LaTeX
-        run: sudo apt-get install -y texlive-latex-base texlive-fonts-recommended
+        run: sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended
 
       - run: npm ci
       - run: npm run build
