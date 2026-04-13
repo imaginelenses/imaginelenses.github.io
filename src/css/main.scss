@@ -298,8 +298,8 @@ footer {
     bottom: 2rem;
     right: 2rem;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    background: rgb(247 247 247);
+    border: 1.5px solid rgb(0 0 0 / 7%);
     border-radius: 50%;
     width: 2.5rem;
     height: 2.5rem;
@@ -308,7 +308,7 @@ footer {
     justify-content: center;
     cursor: pointer;
     box-shadow: var(--boxShadow, 0 2px 8px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.12));
-    color: white;
+    color: var(--bs-gray-800);
     opacity: 1;
     visibility: visible;
     transition: opacity 0.4s ease, visibility 0.4s ease;
