@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         // ─── OTHER PAGES HANDLER ──────────────────────────────────────────────────
         // Handles simple page scrolling for /projects, /blog, etc.
-        initPageScroll()
+        initOtherPagesScroll()
     }
 })
 
@@ -53,12 +53,21 @@ function initHomePageScroll(sectionImages) {
     // Home page scroll button: navigate to sections
     const scrollBtn = document.getElementById('scrollDown')
     const footer = document.querySelector('footer')
+    // Track whether user has scrolled to the end (footer visible)
+    // Arrow only flips to up AFTER reaching the end, not just by scrolling
+    let reachedEnd = false
 
     if (scrollBtn) {
+        // Button visible from start with down arrow
+        scrollBtn.classList.remove('is-up')
+        scrollBtn.classList.remove('faded')
+
         scrollBtn.addEventListener('click', () => {
             if (scrollBtn.classList.contains('is-up')) {
+                // Up arrow: scroll to top
                 window.scrollTo({ top: 0, behavior: 'smooth' })
             } else {
+                // Down arrow: scroll to next section image
                 const sections = Array.from(document.querySelectorAll('.section'))
                 const next = sections.find(s => s.getBoundingClientRect().top > 1)
                 if (next) {
@@ -73,46 +82,57 @@ function initHomePageScroll(sectionImages) {
             const footerVisible = footer && footer.getBoundingClientRect().top < window.innerHeight
 
             if (footerVisible) {
+                // Footer is visible: mark end reached, hide button
+                reachedEnd = true
                 scrollBtn.classList.add('faded')
+            } else if (window.scrollY < 50) {
+                // Back at top: reset state, show down arrow
+                reachedEnd = false
+                scrollBtn.classList.remove('faded')
+                scrollBtn.classList.remove('is-up')
+            } else if (reachedEnd) {
+                // Footer gone but we already reached end — show up arrow
+                scrollBtn.classList.remove('faded')
                 scrollBtn.classList.add('is-up')
             } else {
+                // Still navigating through sections — keep down arrow
                 scrollBtn.classList.remove('faded')
-                if (window.scrollY > 200) {
-                    scrollBtn.classList.add('is-up')
-                } else {
-                    scrollBtn.classList.remove('is-up')
-                }
+                scrollBtn.classList.remove('is-up')
             }
         }, { passive: true })
     }
 }
 
 // ─── OTHER PAGES: Simple scroll button for /projects, /blog, etc. ──────────
-function initPageScroll() {
+function initOtherPagesScroll() {
     const scrollBtn = document.getElementById('scrollDown')
     const footer = document.querySelector('footer')
 
     if (scrollBtn) {
+        // Initially hide the button (not visible, not clickable)
+        scrollBtn.classList.add('is-up')
+        scrollBtn.classList.add('faded')
+
         scrollBtn.addEventListener('click', () => {
-            if (scrollBtn.classList.contains('is-up')) {
-                window.scrollTo({ top: 0, behavior: 'smooth' })
-            } else {
-                window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })
-            }
+            // Always scroll to top on click
+            window.scrollTo({ top: 0, behavior: 'smooth' })
         })
 
+        // Handle button visibility based on scroll position
         document.addEventListener('scroll', () => {
             const footerVisible = footer && footer.getBoundingClientRect().top < window.innerHeight
 
             if (footerVisible) {
+                // Footer visible: fade out button
                 scrollBtn.classList.add('faded')
-                scrollBtn.classList.add('is-up')
             } else {
-                scrollBtn.classList.remove('faded')
+                // Footer not visible
                 if (window.scrollY > 200) {
-                    scrollBtn.classList.add('is-up')
+                    // Scrolled down: show button with up arrow
+                    scrollBtn.classList.remove('faded')
                 } else {
-                    scrollBtn.classList.remove('is-up')
+                    // Near top: keep button hidden
+                    scrollBtn.classList.add('faded')
                 }
             }
         }, { passive: true })
