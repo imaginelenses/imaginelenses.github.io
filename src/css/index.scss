@@ -1,3 +1,325 @@
+#hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+
+    #heroBackground {
+        position: absolute;
+        inset: 0;
+
+        .heroImg,
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        #heroOverlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.62);
+        }
+    }
+
+    #heroContent {
+        position: relative;
+        z-index: 1;
+        color: white;
+        padding: 4rem clamp(1.5rem, 6vw, 8rem);
+        max-width: 860px;
+
+        .heroEyebrow {
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            opacity: 0.75;
+            margin-bottom: 0.75rem;
+        }
+
+        #heroName {
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            width: auto !important;
+        }
+
+        #heroSubtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            opacity: 0.88;
+            max-width: 660px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        #heroStats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+
+            .stat {
+                display: flex;
+                flex-direction: column;
+                min-width: 5rem;
+
+                .statValue {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    line-height: 1.1;
+                }
+
+                .statLabel {
+                    font-size: 0.72rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    opacity: 0.65;
+                }
+            }
+        }
+
+        #heroCTAs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.75rem;
+        }
+
+        #heroSocial {
+            display: flex;
+            gap: 1.25rem;
+
+            a {
+                color: rgba(255,255,255,0.7);
+                transition: color 0.2s;
+
+                &:hover {
+                    color: white;
+                }
+
+                svg {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #hero {
+        min-height: 60vh;
+    }
+}
+
+// On the homepage, apply a matching overlay to the navbar so it blends with the hero
+:root {
+    --hero-overlay-opacity: 0.08;
+}
+
+body:has(#bannerHero) {
+    header {
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.05) 0%,
+            rgba(0, 0, 0, var(--hero-overlay-opacity)) 100%
+        );
+    }
+}
+
+#bannerHero {
+    position: relative;
+    overflow: hidden;
+    height: calc(100vh - var(--nav-h, 56px));
+    margin-top: 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        --blur-intensity: 2px;
+        backdrop-filter: blur(var(--blur-intensity));
+        -webkit-backdrop-filter: blur(var(--blur-intensity));
+        mask-image: linear-gradient(to bottom, black 0%, transparent 28%);
+        -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 28%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, var(--hero-overlay-opacity)) 0%,
+            rgba(0, 0, 0, 0.0) 28%
+        );
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    // Tune these to adjust the hero image zoom and horizontal offset
+    --hero-img-zoom: 1.04;
+    --hero-img-offset-x: -12px;
+
+    .bannerHeroImg,
+    picture,
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        margin-top: 3rem;
+        transform: translateX(var(--hero-img-offset-x)) scale(var(--hero-img-zoom));
+        transform-origin: center center;
+    }
+
+    #bannerOverlay {
+        position: absolute;
+        top: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(90vw, 860px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--bs-navbar-brand-color);
+        z-index: 2;
+
+        h1, p {
+            width: 100% !important;
+            max-width: none;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            font-size: clamp(1.5rem, 2.2vw, 1.25rem);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        #bannerCTAs {
+            margin-top: 1rem;
+
+            a {
+                color: var(--bs-navbar-brand-color);
+                font-weight: 600;
+                text-decoration: underline;
+                letter-spacing: 0.5px;
+
+                &:focus:not(:focus-visible) {
+                    outline: none;
+                }
+
+                &:hover {
+                    opacity: 0.75;
+                }
+            }
+        }
+    }
+}
+
+#scrollDown {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--boxShadow);
+    color: white;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    animation: bounceArrow 2s ease-in-out infinite;
+
+    &.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    svg {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+@keyframes bounceArrow {
+    0%, 100% { transform: translateX(-50%) translateY(0);      }
+    50%       { transform: translateX(-50%) translateY(-0.4rem); }
+}
+
+@media only screen and (max-width: 768px) {
+    body:has(#bannerHero) header {
+        background: none;
+    }
+
+    #bannerHero {
+        height: auto;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+
+        picture,
+        .bannerHeroImg,
+        img {
+            height: 56vw;
+            min-height: 220px;
+            flex-shrink: 0;
+        }
+
+        #bannerOverlay {
+            position: static;
+            transform: none;
+            left: auto;
+            width: 100%;
+            height: 56vw;
+            min-height: 220px;
+            background: white;
+            padding: 1rem 1.5rem;
+
+            h1 {
+                font-size: 1.1rem;
+                margin-bottom: 0.4rem;
+            }
+
+            p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+
+            #bannerCTAs {
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+
+    #scrollDown {
+        display: none;
+    }
+}
+
 .section {
     position: relative;
     overflow: hidden;
@@ -18,7 +340,9 @@
     width: 100%;
 }
 
-#photo .title, #about .title {
+#projects .title, #photo .title {
     left: auto;
     right: 5%;
 }
+
+

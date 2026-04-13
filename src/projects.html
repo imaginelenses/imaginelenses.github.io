@@ -1,15 +1,14 @@
 ---
 layout: 'base.html'
 title: 'Projects'
+seo_title: 'Robotics & Computer Vision Projects | Karthik Shivashankaran'
 tags: 'nav'
 order: 2
 css: ['projects.scss']
-description: 'A collection of projects by Imaginelenses - Karthik Shivashankar.'
+description: 'Portfolio of robotics, computer vision, and motion planning projects by Karthik Shivashankaran (imaginelenses). Features SLAM, Kalman Filters, YOLOv8, and Embedded Systems.'
 ---
 
-{% set js %}
-<img class="techIcon js" width="512" alt="JavaScript Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/512px-JavaScript-logo.png">JavaScript
-{% endset %}
+{% set js %}JavaScript{% endset %}
 
 {% set react %}
 {% link "https://reactjs.org/", "React" %} ({{ js | safe }})
@@ -62,13 +61,14 @@ C
   {% for project in collections.projects | reverse %}
     <h2>
       <div class="projectTitleContainer">
-        <div class="projectTitle">{% title project.data.title %}</div>
+        <div class="projectTitle">{% title project.data.title %}{% if project.data.badge %}<span class="projectBadge">{{ project.data.badge | safe }}</span>{% endif %}</div>
         <div class="date">{{ project.data.when }}</div>
       </div>
     </h2>
     
     {{ project.templateContent | safe }}
 
+    <br>
     <p>
       <strong>Tech Stack:</strong>&nbsp;
       {% set len = (project.data.techStack | length) %}

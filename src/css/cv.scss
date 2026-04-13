@@ -1,0 +1,76 @@
+.content > h1 {
+    text-align: center !important;
+    color: var(--bs-gray-900) !important;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: min(5%, 40px);
+}
+
+.contained ul {
+    padding-left: 1.25rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .contained {
+        overflow-x: auto;
+        word-break: break-word;
+    }
+}
+
+#cvEmbed {
+    width: var(--containedWidth);
+    max-width: 800px;
+    margin: 2rem 0 3rem;
+    box-shadow: var(--boxShadow);
+
+    object {
+        width: 100%;
+        height: 80vh;
+        border: none;
+        display: block;
+    }
+}
+
+#cvFallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40vh;
+    gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+    width: auto !important;
+
+    a {
+        padding: 0.6rem 1.4rem;
+        border: 1.5px solid currentColor;
+        border-radius: 4px;
+        text-decoration: none;
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+}
+
+#cvMobileDownload {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    #cvEmbed {
+        display: none;
+    }
+
+    #cvMobileDownload {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 1rem;
+        gap: 1rem;
+        text-align: center;
+        width: auto !important;
+    }
+}

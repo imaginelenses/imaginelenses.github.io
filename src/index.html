@@ -1,33 +1,40 @@
 ---
 layout: 'base.html'
 title: 'Home'
+seo_title: 'Karthik Shivashankaran | Full-Stack Robotics & Computer Vision Engineer | 2026 Graduate'
 tags: 'nav'
 order: 1
 css: ['index.scss']
 imgSrc: './src/media/'
-description: 'Imaginelenses - the personal brand of Karthik Shivashankar'
+description: 'Karthik Shivashankaran (imaginelenses) is a Full-stack robotics engineer and Computer vision engineer. NYU M.S. Computer Engineering 2026. Expert in motion/path planning, SLAM, and sensor fusion.'
 ---
 
-<div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      {% image imgSrc, "banner_1.jpg", "d-block h-auto w-100", "100vw", "", false, false %}
-    </div>
-    <div class="carousel-item">
-      {% image imgSrc, "banner_2.jpg", "d-block h-auto w-100", "100vw", "", false, false %}
-    </div>
-    <div class="carousel-item">
-      {% image imgSrc, "banner_3.jpg", "d-block h-auto w-100" %}
-    </div>
+<div id="bannerHero">
+  {% image imgSrc, "banner_2.jpg", "bannerHeroImg", "100vw", "", false, false %}
+  <div id="bannerOverlay">
+    <h1>Hi, I'm Karthik Shivashankaran</h1>
+    <p>
+      A <strong>Full-Stack Robotics Engineer</strong> based in NYC, specializing in computer vision, sensor fusion, and embedded systems.
+      M.S. Computer Engineering, NYU (2026)
+    </p>
+    <p id="bannerCTAs">
+      <a href="/about#contact">Get in touch</a>
+      &nbsp;|&nbsp;
+      <a href="/cv">View my CV</a>
+    </p>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+  <button id="scrollDown" type="button" aria-label="Scroll down to content">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+      <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+    </svg>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+</div>
+
+<div id="projects" class="section">
+  {% image imgSrc, "jog_falls.jpg", "sectionImage" %}
+  <a href="/projects">
+    <h1 class="title">Projects</h1>
+  </a>
 </div>
 
 <div id="blog" class="section">
@@ -41,13 +48,6 @@ description: 'Imaginelenses - the personal brand of Karthik Shivashankar'
   {% image imgSrc, "taking_a_picture_by_the_lake.jpg", "sectionImage" %}
   <a href="/photo">
     <h1 class="title">Gallery</h1>
-  </a>
-</div>
-
-<div id="projects" class="section">
-  {% image imgSrc, "jog_falls.jpg", "sectionImage" %}
-  <a href="/projects">
-    <h1 class="title">Projects</h1>
   </a>
 </div>
 

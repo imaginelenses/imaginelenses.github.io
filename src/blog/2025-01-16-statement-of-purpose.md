@@ -1,5 +1,6 @@
 ---
 title: 'The pursuit of life-changing pedagogy'
+seo_title: 'Statement of Purpose | Computer Engineering M.S. | Karthik Shivashankaran'
 tags:
     - 'grad school'
     - 'writing'

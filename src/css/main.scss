@@ -57,6 +57,10 @@ h2, h3, summary {
         scale: 0;
         transition: scale ease-in 50ms;
     }
+
+    a[id]:focus(:focus-visible) {
+        outline: none;
+    }
 }
 
 summary {

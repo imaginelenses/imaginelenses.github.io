@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+
+%% Packages
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=0.5in, right=0.5in, top=0.4in, bottom=0.4in]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{amssymb}
+
+%% Page style
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+%% Section formatting
+\titleformat{\section}
+  {\bfseries\uppercase}
+  {}{0em}{}
+  [\vspace{1pt}\hrule\vspace{2pt}]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+
+%% Compact bullets
+\setlist[itemize]{
+  noitemsep, topsep=1pt, parsep=0pt,
+  partopsep=0pt, leftmargin=1.2em, label=\textbullet
+}
+
+%% Entry header — optional [url], {Title/Org}, {Role/Tech}, {Date}
+\newcommand{\entryhead}[4][]{%
+  \noindent
+  \ifx&#1&%
+    \textbf{#2}%
+  \else
+    \href{#1}{\textbf{#2}}%
+  \fi
+  {\small\textit{ $\cdot$ #3}}%
+  \hfill {\small #4}%
+}
+
+% ─────────────────────────────────────────────
+\begin{document}
+
+%% ── HEADER ──────────────────────────────────
+\begin{center}
+  {\LARGE\textbf{Karthik Shivashankaran}} \\[3pt]
+  {\small
+    Brooklyn, NY \textbar{}
+    +1 848-702-5284  \textbar{}
+    \href{mailto:ks7926@nyu.edu}{ks7926@nyu.edu} \\
+    \href{https://imaginelenses.com/}{imaginelenses.com} \textbar{}
+    \href{https://www.linkedin.com/in/imaginelenses}{linkedin.com/in/imaginelenses} \textbar{}
+    \href{https://github.com/imaginelenses}{github.com/imaginelenses}
+  } \\[2pt]
+  {\small\textbf{US Work Authorized --- OPT (STEM Extension Eligible)}}
+\end{center}
+
+\vspace{-2pt}
+
+%% ── SUMMARY ─────────────────────────────────
+\section*{Summary}
+M.S.\ Computer Engineering graduate (2026) specializing in Robotics, Motion Planning, Path Planning, and Computer Vision. Proven track record of building real-time state estimation pipelines and production-deployed embedded systems. Creator of open-source tooling with 130+ GitHub stars.
+
+%% ── EDUCATION ───────────────────────────────
+\section*{Education}
+\textbf{New York University} --- M.S.\ Computer Engineering $\cdot$ Scholarship Recipient
+\hfill New York, NY \textbar{} 2026 \\
+{\small\textit{Courses: Real-Time Embedded Systems, Reinforcement Learning for Robotics,
+Computer Vision, Computer Networking, Computer Architecture, Operating Systems}}
+
+\smallskip
+\textbf{Acharya Institute of Technology} --- B.E.\ Mechatronics
+\hfill Bangalore, India \textbar{} 2022
+
+%% ── TECHNICAL SKILLS ────────────────────────
+\section*{Technical Skills}
+{\small
+\textbf{Languages:} Python, C, C++, Java, JavaScript, SQL, CMake \\[1pt]
+\textbf{ML / Computer Vision:} YOLOv8, Object Detection, Multi-Object Tracking, ByteTrack,
+  3D Gaussian Splatting, Depth \& Pose Estimation, Structure-from-Motion (SfM),
+  Camera Calibration, PyTorch, OpenCV, NumPy \\[1pt]
+\textbf{Robotics \& Autonomy:} SLAM, Motion Planning, Path Planning, Sensor Fusion,
+  State Estimation (Kalman Filter, EKF, Particle Filter), Open3D, Point Cloud Processing,
+  Reinforcement Learning (Stable-Baselines3), Gymnasium \\[1pt]
+\textbf{Control Systems:} PID, MPC, LQR, Closed-Loop Control, Real-Time Systems \\[1pt]
+\textbf{Embedded \& Hardware:} ESP32, Raspberry Pi, Arduino, IMU, CAD,
+  3D Printing, Rapid Prototyping \\[1pt]
+\textbf{Systems \& Tools:} Git, Docker, CI/CD, Linux,
+  AWS (EC2, S3, Lambda), TCP/IP, WebSockets, SPI, I2C
+}
+
+%% ── APPLIED RESEARCH & TECHNICAL PROJECTS ────────────────────────────────
+\section*{Applied Research \& Technical Projects}
+\entryhead
+  {Mobile Robot State Estimation}
+  {Python $\cdot$ C++ $\cdot$ UDP $\cdot$ RPLIDAR $\cdot$ ArUco}
+  {Mar 2026}
+\begin{itemize}
+  \item Developed robust localization stack for a differential drive robot by fusing UDP-broadcasted wheel encoder odometry (10Hz) with ArUco visual pose measurements via an EKF, reducing positional RMSE to 4.14\,cm
+  \item Engineered a custom 3,000-particle Particle Filter for global localization, achieving 0.27\,cm spread and 0.90\textdegree{} heading $\sigma$; successfully recovered from a severe 1\,m\,/\,90\textdegree{} uniform un-modeled error in 0.63\,s
+\end{itemize}
+
+\vspace{2pt}
+\entryhead[https://github.com/exploring-curiosity/2Pass-3D-Reconstruction-of-Urban-Scene]
+  {3D Line-of-Sight Audit System for Intersections}
+  {Python $\cdot$ Gaussian Splatting $\cdot$ OpenCV}
+  {Dec 2025}
+\begin{itemize}
+  \item Owned the 3D reconstruction pipeline within a team-built intersection audit system, replacing manual checks with an 8-camera SfM and Gaussian Splatting pipeline (30 FPS); generated a 1.34M-point cloud to evaluate pedestrian visibility
+  \item Contributed to deployment of YOLOv8 + ByteTrack for real-time multi-object tracking (20--40 tracks/camera); multi-camera fusion achieved ${>}$90\% precision, ${>}$85\% recall, and detected vehicles ${\sim}$12.2s earlier than a single-camera 2D baseline
+\end{itemize}
+
+\vspace{2pt}
+\entryhead
+  {RL Locomotion \& Trajectory Optimization}
+  {Python $\cdot$ Stable-Baselines3 $\cdot$ Gymnasium}
+  {Dec 2024}
+\begin{itemize}
+  \item Trained PPO agent for continuous planar robot control in a custom Gymnasium
+    sim; benchmarked against SQP trajectory optimization to evaluate sample
+    efficiency and constraint-handling tradeoffs.
+\end{itemize}
+
+\vspace{2pt}
+\entryhead[https://smartswitch.imaginelenses.com/]
+  {Smart Switch}
+  {JavaScript $\cdot$ YAML $\cdot$ ESP32 $\cdot$ CAD $\cdot$ 3D Printing}
+  {Aug 2023}
+\begin{itemize}
+  \item Built a local-first ESP32 smart switch with auto-generated firmware and YAML
+    config tooling; eliminated cloud round-trip latency (sub-ms LAN
+    vs.\ 80--200\,ms cloud), 5 units deployed and operational.
+\end{itemize}
+
+\vspace{2pt}
+\entryhead[https://blendit.imaginelenses.com/]
+  {Blendit \normalfont{\small($\bigstar$ 130 GitHub Stars)}}
+  {Python $\cdot$ Git $\cdot$ Blender}
+  {Sep 2022}
+\begin{itemize}
+  \item Git-based version control extension for Blender; reduced project file size by
+    83\% via function-call delta logging instead of full binary snapshots
+\end{itemize}
+
+\end{document}

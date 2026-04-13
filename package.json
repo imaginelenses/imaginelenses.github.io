@@ -3,8 +3,9 @@
   "version": "2.0.0",
   "description": "Imaginelenses Website",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "PRODUCTION=true eleventy"
+    "compile:cv": "cd src && pdflatex -interaction=nonstopmode cv.tex && pdflatex -interaction=nonstopmode cv.tex && mv cv.pdf karthik-shivashankar-cv.pdf && rm -f cv.aux cv.log cv.out cv.toc",
+    "start": "npm run compile:cv && eleventy --serve",
+    "build": "npm run compile:cv && PRODUCTION=true eleventy"
   },
   "keywords": [],
   "author": "imaginelenses <imaginelenses@gmail.com> (https://www.imaginelenses.com/)",

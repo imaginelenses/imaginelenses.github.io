@@ -158,6 +158,9 @@ module.exports = (config) => {
     config.addPassthroughCopy('./src/js')
     config.addWatchTarget('./src/js')
 
+    // CV PDF
+    config.addPassthroughCopy('./src/karthik-shivashankar-cv.pdf')
+
     // Dates
     config.addFilter('htmlDate', (date) => (
         DateTime.fromJSDate(date, {zone: 'Asia/Kolkata'}).toFormat('yyyy-LL-dd')

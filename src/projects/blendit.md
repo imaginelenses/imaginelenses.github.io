@@ -7,6 +7,7 @@ techStack: ['python', 'pygit2', {
     'Git': 'https://git-scm.com/'
     }]
 source: 'https://github.com/imaginelenses/blendit'
+badge: '<a class="github-button" href="https://github.com/imaginelenses/blendit" data-icon="octicon-star" data-show-count="true" aria-label="Star imaginelenses/blendit on GitHub">Star</a>'
 ---
 
 <a href="https://blendit.imaginelenses.com/" target="_blank">Blendit</a> (Blender + Git) - A Git integration that brings Version Control to Blender.
