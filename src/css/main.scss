@@ -208,7 +208,8 @@ blockquote::after {
 .tableWrapper {
     @extend .fullWidth;
     box-shadow: none;
-    overflow: auto;
+    overflow-x: auto;
+    max-width: 800px;
 }
 
 table {

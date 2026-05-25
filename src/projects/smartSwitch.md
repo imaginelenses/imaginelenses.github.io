@@ -1,5 +1,5 @@
 ---
-title: 'Smart Switch (ESP32)'
+title: 'Smart Switch - Smart Home Device'
 date: '2023-08-01'
 when: 'Aug 2023'
 techStack: [{'ESP32': 'https://www.espressif.com/en/products/socs/esp32'}, {'Home Assistant': 'https://www.home-assistant.io/'}, 'YAML', 'js']

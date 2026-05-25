@@ -1,5 +1,5 @@
 ---
-title: 'Seam Carving'
+title: 'Seam Carving - Content Aware Resizing'
 date: '2022-04-01'
 when: 'Apr 2022 - May 2022'
 techStack: ['python']

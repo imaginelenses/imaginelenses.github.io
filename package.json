@@ -3,8 +3,11 @@
   "version": "2.0.0",
   "description": "Imaginelenses Website",
   "scripts": {
+    "install:latex": "bash scripts/install-latex.sh",
     "compile:cv": "cd src && pdflatex -interaction=nonstopmode cv.tex && pdflatex -interaction=nonstopmode cv.tex && mv cv.pdf karthik-shivashankar-cv.pdf && rm -f cv.aux cv.log cv.out cv.toc",
+    "prestart": "npm run install:latex",
     "start": "npm run compile:cv && eleventy --serve",
+    "prebuild": "npm run install:latex",
     "build": "npm run compile:cv && PRODUCTION=true eleventy"
   },
   "keywords": [],

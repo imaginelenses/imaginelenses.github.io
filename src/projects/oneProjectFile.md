@@ -1,5 +1,5 @@
 ---
-title: 'OneProjectFile'
+title: 'OneProjectFile - Version Control for Creative Professionals'
 date: '2020-12-01'
 when: 'Dec 2020 - Feb 2021'
 techStack: ['flask', 'js', 'SQLite', 'html']

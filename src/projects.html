@@ -38,6 +38,10 @@ description: 'Portfolio of robotics, computer vision, and motion planning projec
 C
 {% endset %}
 
+{% set sklearn %}
+<a href="https://scikit-learn.org/" target="_blank">scikit-learn</a>
+{% endset %}
+
 <div class="content">
   <h2>
     <div class="projectTitleContainer">
@@ -89,6 +93,8 @@ C
           {{ java | safe}}
         {% elif tech == 'c' %}
           {{ c | safe}}
+        {% elif tech == 'sklearn' %}
+          {{ sklearn | safe}}
         {% elif tech | isString %}
           {{ tech }}
         {% else %}

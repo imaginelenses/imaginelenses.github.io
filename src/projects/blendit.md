@@ -1,5 +1,5 @@
 ---
-title: 'Blendit'
+title: 'Blendit (Blender + Git)'
 date: '2022-08-01'
 when: 'Aug 2022 - Sep 2022'
 techStack: ['python', 'pygit2', {

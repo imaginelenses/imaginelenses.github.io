@@ -1,5 +1,5 @@
 ---
-title: 'Enigma'
+title: 'Enigma - Enigma Machine Emulator'
 date: '2022-06-01'
 when: 'Jun 2022'
 techStack: ['react', 'html']
