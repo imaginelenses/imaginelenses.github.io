@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Robotics &amp; Computer Vision Projects | Karthik Shivashankaran</title>
+
+  
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self';
+      style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css;
+      script-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js https://buttons.github.io/buttons.js https://static.cloudflareinsights.com;
+      img-src 'self' https://*.imaginelenses.com/ https://*.11ty.dev/ https://i.ytimg.com https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/512px-JavaScript-logo.png https://www.w3.org/html/logo/badge/html5-badge-h-solo.png https://img.icons8.com/color/48/null/c-programming.png https://raw.githubusercontent.com/ data: http://www.w3.org/*;
+      connect-src https://*.github.com https://cloudflareinsights.com https://imaginelenses.com https://cdn.jsdelivr.net;
+      frame-src https://imaginelenses.com/ https://www.youtube-nocookie.com/;
+      child-src 'none';
+    " 
+  />
+  
+
+  <meta name="generator" content="Eleventy v2.0.1">
+  <meta name="description" content="Portfolio of robotics, computer vision, and motion planning projects by Karthik Shivashankaran (imaginelenses). Features SLAM, Kalman Filters, YOLOv8, and Embedded Systems.">
+  <meta name="author" content="Karthik Shivashankar">
+  
+  
+  <link rel="canonical" href="https://imaginelenses.com/projects/">
+  <meta property="og:url" content="https://imaginelenses.com/projects/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Imaginelenses | Karthik Shivashankaran">
+  <meta property="og:title" content="Robotics &amp; Computer Vision Projects | Karthik Shivashankaran">
+  <meta property="og:description" content="Portfolio of robotics, computer vision, and motion planning projects by Karthik Shivashankaran (imaginelenses). Features SLAM, Kalman Filters, YOLOv8, and Embedded Systems.">
+  <meta property="og:image" content="https://v1.screenshot.11ty.dev/https%3A%2F%2Fimaginelenses.com%2Fprojects%2F/opengraph/_20260526T1910016450530">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="@imaginelenses">
+  <meta property="twitter:creator" content="@imaginelenses">
+  
+  <meta property="profile:first_name" content="Karthik">
+  <meta property="profile:last_name" content="Shivashankar">
+  <meta property="profile:username" content="imaginelenses">
+  <meta property="profile:gender" content="male">
+  
+  <meta property="article:published_time" content="2026-05-26T00:00:00.000+05:30">
+  <meta property="article:modified_time" content="2026-05-26T00:00:00.000+05:30">
+  <meta property="article:author" content="https://imaginelenses.com/">
+  <meta property="article:section" content="Technology">
+  
+
+  <!-- Preconnect to Eleventy services -->
+  <link href="https://v1.opengraph.11ty.dev" rel="preconnect" crossorigin>
+  <link href="https://v1.indieweb-avatar.11ty.dev" rel="preconnect" crossorigin>
+
+  <link rel="icon" href="/media/icons/favicon.ico" type="image/x-icon">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  
+  <style>:root{--containedWidth: 50vw;--boxShadow: 0 .5rem 1rem rgba(0, 0, 0, .15)}.nav-item{font-size:var(--bs-nav-link-font-size)}.navbar-brand{font-size:32px;letter-spacing:1.5px;user-select:none}.navbar-toggler:focus{box-shadow:none !important}.content{display:flex;flex-direction:column;align-items:center;color:var(--bs-gray-800)}h1,h2,h3,h4,h5,h6,p,ol,ul,hr,time,.contained,pre,blockquote,summary{height:auto;width:var(--containedWidth) !important;max-width:800px}.navbar-collapse>ul{width:auto !important}.fullWidth,.tableWrapper{height:auto;width:min(95vw,var(--containedWidth) + 10vw);margin-top:1rem;margin-bottom:3rem;box-shadow:var(--boxShadow)}h2,h3,summary{margin-top:min(5%,40px);text-transform:uppercase;font-weight:500;color:var(--bs-gray-900)}h2 a[id]>svg,h3 a[id]>svg,summary a[id]>svg{height:.8em;margin:0 0 .1em 5px;fill:var(--bs-gray-800);scale:0;transition:scale ease-in 50ms}h2 a[id]:focus(:focus-visible),h3 a[id]:focus(:focus-visible),summary a[id]:focus(:focus-visible){outline:none}summary{font-size:larger;margin-top:0;margin-bottom:1rem}h3{margin-top:min(2.5%,20px)}h2:hover a[id]>svg,h3:hover a[id]>svg{scale:100%}h2::after{content:"";display:block;margin:10px 0px 30px 0px;height:1px;width:100%;background:var(--bs-gray-500)}h4{margin-top:10px}li>h4{width:auto !important}.title{font-size:5em;font-weight:570;text-transform:uppercase;color:var(--bs-black);line-height:1;overflow:auto hidden}p,li{font-size:1.5em;text-align:justify}a,li>h4{color:var(--bs-gray-800);text-decoration-color:var(--bs-primary);text-transform:none;font-weight:400}a:hover{color:var(--bs-primary)}a[style]::before{content:"";display:inline-block;height:1em;width:1em;margin:0 4px 1px 0;vertical-align:text-bottom;background-image:var(--icon);background-size:contain}pre{display:flex;flex-direction:row;padding:1em;gap:.5em;justify-content:space-between;align-items:start;margin-bottom:20px !important;background-color:#000 !important}pre::after{content:"";display:inline-block;height:1.3em;aspect-ratio:1;margin-top:.25em;opacity:0;transition:700ms;cursor:pointer;background:url(/media/icons/clipboard.svg);background-repeat:no-repeat}pre[data-copied]::after{transition:700ms;cursor:default;background:url(/media/icons/check2.svg)}pre:hover::after{opacity:1;transition:200ms}code{padding:2px 5px;user-select:all;color:var(--bs-gray-900);border-radius:5%;background:var(--bs-gray-300)}blockquote,blockquote>a{font-size:27px;font-style:italic;font-weight:300}blockquote{text-align:justify;padding:5px 15px 5px 10px;border-style:solid;border-width:0;border-left-width:8px;border-color:var(--bs-gray-200);background:var(--bs-gray-100)}blockquote::before,blockquote::after{font-size:30px;font-weight:400;color:var(--bs-gray-500)}blockquote::before{content:open-quote}blockquote::after{content:close-quote}.tableWrapper{box-shadow:none;overflow-x:auto;max-width:800px}table{border-collapse:collapse}table th{text-transform:uppercase;border-style:solid;border-color:var(--bs-gray-500);border-width:0;border-bottom-width:1px}table th,table td{padding:1rem}table thead>tr,table tr:nth-of-type(2n){background-color:#f8f8f8}footer{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;margin:100px 0 20px 0}.social{margin-bottom:15px}.social a{text-decoration:none;margin:0px 5px}.social .bi{height:30px}.social a:hover .bi-linkedin{fill:#0077b5}.social a:hover .bi-github{fill:#000}.social a:hover .bi-youtube{fill:red}@media only screen and (max-width: 1400px){:root{--containedWidth: max(calc(1200px * 0.8), 70vw)}}@media only screen and (max-width: 1200px){:root{--containedWidth: max(calc(600px * 0.95), 80vw)}}@media only screen and (max-width: 600px){:root{--containedWidth: 95vw}.navbar>div{padding-right:0;padding-left:0}.title{font-size:3em}}#scrollDown{position:fixed;bottom:2rem;right:2rem;z-index:100;background:#f7f7f7;border:1.5px solid rgba(0,0,0,.07);border-radius:50%;width:2.5rem;height:2.5rem;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--boxShadow, 0 2px 8px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.12));color:var(--bs-gray-800);opacity:1;visibility:visible;transition:opacity .4s ease,visibility .4s ease}#scrollDown.faded{opacity:0;visibility:hidden;pointer-events:none}#scrollDown:hover{box-shadow:0 4px 16px rgba(0,0,0,.22),0 2px 6px rgba(0,0,0,.14)}#scrollDown svg{width:1rem;height:1rem;transition:transform .3s ease}#scrollDown.is-up svg{transform:scaleY(-1)}@media only screen and (max-width: 600px){#scrollDown{bottom:1rem;right:1rem}}</style>
+  
+  <style>.projectTitleContainer{display:flex;flex-direction:row;justify-content:space-between;flex-wrap:wrap}.projectTitle{flex:1;min-width:0;word-break:break-word}.date{margin-top:auto;text-align:end;font-size:large;font-weight:500;text-transform:uppercase;white-space:nowrap;flex-shrink:0}.iframeContainer{margin-bottom:30px}.iframeContainer iframe{margin:0}.iframeContainer::after{content:"Click the above window before interaction.";display:block;width:100%;text-align:center;margin-top:-5px;color:var(--bs-gray-600)}iframe{--iframeWidth: calc(var(--containedWidth) + 10vw);width:var(--iframeWidth);height:calc(var(--iframeWidth)*.5625);margin-bottom:30px;box-shadow:0 .5rem 1rem rgba(0,0,0,.15)}.techIcon{height:1em;width:1em;margin:0 4px 2px 0;vertical-align:text-bottom}.html5{margin-bottom:1px}@media only screen and (max-width: 600px){iframe{--iframeWidth: 95vw}}</style>
+  
+
+  
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Karthik Shivashankaran",
+    "url": "https://imaginelenses.com",
+    "jobTitle": "Full-Stack Robotics Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "New York University"
+    },
+    "alumniOf": "Acharya Institute of Technology",
+    "sameAs": [
+      "https://github.com/imaginelenses",
+      "https://www.linkedin.com/in/imaginelenses"
+    ],
+    "knowsAbout": [
+      "Robotics",
+      "Computer Vision Engineer",
+      "Motion/path planning engineer",
+      "Sensor Fusion",
+      "SLAM",
+      "State Estimation",
+      "C++",
+      "Python",
+      "Embedded Systems",
+      "Kalman Filter",
+      "YOLOv8",
+      "3D Gaussian Splatting"
+    ]
+  }
+  </script>
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <header>
+    <nav class="navbar navbar-expand-lg p-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Imaginelenses</a>
+        <button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <ul class="navbar-nav ms-auto my-2 my-lg-0 align-items-end">
+            
+              <li class="nav-item">
+                <a 
+                  
+                    class="nav-link" href="/">
+                  
+                  Home
+                </a>
+              </li>
+            
+              <li class="nav-item">
+                <a 
+                  
+                    class="nav-link active" aria-current="page" href="#">
+                  
+                  Projects
+                </a>
+              </li>
+            
+              <li class="nav-item">
+                <a 
+                  
+                    class="nav-link" href="/blog/">
+                  
+                  Blog
+                </a>
+              </li>
+            
+              <li class="nav-item">
+                <a 
+                  
+                    class="nav-link" href="/about/">
+                  
+                  About
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-grow-1 flex-shrink-1">
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content">
+  <h2>
+    <div class="projectTitleContainer">
+      <div class="projectTitle">
+        12 Projects
+      </div>
+      <div class="date">
+        <a class="github-button" href="https://github.com/imaginelenses" data-color-scheme="no-preference: light; light: light; dark: light;" data-size="large" data-show-count="true" aria-label="Follow @imaginelenses on GitHub">Follow</a>
+      </div>
+    </div>
+  </h2>
+  
+  <ol reversed>
+    
+      <li>
+        <h4><a href="#pixels-to-steps-cartpole-stabilisation-from-pixels">Pixels To Steps - Cartpole Stabilisation from Pixels</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#robot-localization-and-autonomous-navigation">Robot Localization &amp; Autonomous Navigation</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#3d-line-of-sight-audit-system-for-intersections">3D Line-of-Sight Audit System for Intersections</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#rl-locomotion-and-trajectory-optimization">RL Locomotion &amp; Trajectory Optimization</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#smart-switch-smart-home-device">Smart Switch - Smart Home Device</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#blendit-blender-git">Blendit (Blender + Git)</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#enigma-enigma-machine-emulator">Enigma - Enigma Machine Emulator</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#seam-carving-content-aware-resizing">Seam Carving - Content Aware Resizing</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#transform-image-processing-tool">Transform - Image Processing Tool</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#kalman-mobile-and-kalman-desktop">Kalman Mobile &amp; Kalman Desktop</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#bachelor-s-project">Bachelor&#39;s Project</a></h4>
+      </li>
+    
+      <li>
+        <h4><a href="#oneprojectfile-version-control-for-creative-professionals">OneProjectFile - Version Control for Creative Professionals</a></h4>
+      </li>
+    
+  </ol>
+
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">Pixels To Steps - Cartpole Stabilisation from Pixels<a id="pixels-to-steps-cartpole-stabilisation-from-pixels" href="#pixels-to-steps-cartpole-stabilisation-from-pixels" role="button" aria-label="Link to Pixels To Steps - Cartpole Stabilisation from Pixels."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">May 2026</div>
+      </div>
+    </h2>
+    
+    <p>Cartpole stabilisation from pixels alone, with no angle or position sensor at inference time. Implements the linear vision-based control framework of <a href="https://arxiv.org/abs/2406.18699" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Farxiv.org/');">Lee et al.</a>, adapted for simulation in Gym CartPole. A student policy trained on 40 teacher demonstrations achieves <strong>100% survival across 100 random initial conditions</strong> under plant mismatch, running as a single matrix multiply at 60 Hz.</p>
+<img src="https://raw.githubusercontent.com/imaginelenses/pixelsToSteps/main/assets/demo.gif" alt="Web UI demo showing cartpole stabilisation from pixels" class="fullWidth" style="border-radius: 10px;" decoding="async" loading="lazy">
+<p><strong>Data collection.</strong> A privileged teacher with full state access runs an LQR policy, with the gain computed offline by solving the discrete-time algebraic Riccati equation, and logs state, input, and pixel frame tuples.</p>
+<p><strong>Observer training.</strong> A hybrid Luenberger observer is fit to the collected demonstrations. The nominal dynamics matrices are fixed from linearisation around the upright equilibrium; only the pixel-to-angle mapping is learned via Ridge regression on flattened binary frames produced by Gaussian blur and Otsu thresholding.</p>
+<p><strong>Inference.</strong> The observer blends the open-loop dynamics prediction with the pixel-derived angle estimate at a fixed weight and closes the loop with the LQR gain. No angle sensor is used.</p>
+<p><strong>Key Results:</strong></p>
+<div class="tableWrapper"><table>
+<thead><tr><th>Demos</th><th>Pixel-to-angle R²</th><th>Pixel-to-angle RMSE</th><th>Survival</th><th>Paper-success*</th></tr></thead>
+<tbody>
+<tr><td>20</td><td>0.980</td><td>0.181°</td><td>96/100</td><td>75/100</td></tr>
+<tr><td><strong>40</strong></td><td><strong>0.987</strong></td><td><strong>0.123°</strong></td><td><strong>100/100</strong></td><td><strong>72/100</strong></td></tr>
+</tbody>
+</table></div>
+<p>* Paper-success: cart within 0.176 m, pole within 2° at t = 2.5 s.</p>
+<p>The 72% paper-success rate is meaningful in context: the original paper's observer corrects all 4 states directly from pixels; this implementation corrects only the pole angle (1 state), with cart position propagated entirely by the open-loop dynamics. The 72% reflects accumulated cart position drift, not instability; survival is 100%.</p>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+<a href="https://www.python.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.python.org/');">Python</a>
+
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://gymnasium.farama.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fgymnasium.farama.org/');">Gymnasium</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://numpy.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fnumpy.org/');">NumPy</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+<a href="https://scikit-learn.org/" target="_blank">scikit-learn</a>
+
+        
+        
+        
+          |
+        
+              
+        
+          Control Systems
+        
+        
+        
+          |
+        
+              
+        
+          Computer Vision
+        
+        
+        
+          |
+        
+              
+        
+          State Estimation
+        
+        
+        
+      
+    </p>
+
+    
+      <p>
+        <a href="https://github.com/imaginelenses/pixelsToSteps" target="_blank">...view source code.</a>
+      </p>
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">Robot Localization & Autonomous Navigation<a id="robot-localization-and-autonomous-navigation" href="#robot-localization-and-autonomous-navigation" role="button" aria-label="Link to Robot Localization & Autonomous Navigation."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Jan - May 2026</div>
+      </div>
+    </h2>
+    
+    <p>Complete autonomous navigation stack built from scratch and deployed on a physical Ackermann steering robot, across five progressive labs in the NYU graduate course <a href="https://sites.google.com/nyu.edu/rob-gy6213/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fsites.google.com/');">ROB-GY 6213</a>. Every algorithm (motion model identification, camera calibration, EKF, particle filter, and MPPI) is implemented without library abstractions and validated on real hardware.</p>
+<img src="https://raw.githubusercontent.com/imaginelenses/NYU_ROB_GY_6213/main/assets/mppi_demo.gif" alt="MPPI autonomous navigation on physical robot" class="fullWidth" style="border-radius: 10px;" decoding="async" loading="lazy">
+<p><strong>Motion Model.</strong> Controlled experiments at five steering angles and three trial durations yield ground-truth trajectory data. Separate degree-2 polynomial models are fit for left and right turns via nonlinear least squares, capturing the robot's mechanical asymmetry in both mean displacement and variance.</p>
+<p><strong>EKF Localization.</strong> An Extended Kalman Filter fuses high-frequency wheel odometry with sparse ArUco marker observations from a calibrated overhead camera. The nonlinear unicycle model forms the prediction step; ArUco pose provides the linear correction. 95% confidence ellipses grow when the robot leaves the camera's field of view and shrink on re-entry, directly reflecting the filter's online uncertainty estimate.</p>
+<img src="https://raw.githubusercontent.com/imaginelenses/NYU_ROB_GY_6213/main/assets/camera_before_after.jpg" alt="Overhead camera frame before and after lens distortion correction" class="fullWidth" decoding="async" loading="lazy">
+<p><strong>Particle Filter (MCL).</strong> A full Monte Carlo Localization pipeline (motion update, RPLidar beam model likelihood, systematic resampling, and adaptive reinitialization) localizes the robot within a pre-built occupancy map. Benchmarked under three conditions: accurate prior, wrong prior, and completely unknown pose.</p>
+<img src="https://raw.githubusercontent.com/imaginelenses/NYU_ROB_GY_6213/main/assets/pf_trajectory.png" alt="Particle filter trajectory under three initialization conditions: accurate prior, wrong prior, and unknown pose" class="fullWidth" decoding="async" loading="lazy">
+<p><strong>MPPI Navigation.</strong> A Model Predictive Path Integral controller closes the full autonomy loop. A Euclidean Distance Transform of the occupancy map converts obstacle geometry into a continuous clearance cost field. At each control step, thousands of stochastic candidate trajectories are forward-simulated, weighted by composite cost (goal proximity, path following, obstacle clearance), and collapsed into a single control via importance-weighted averaging, all running in real time on the physical robot.</p>
+<p><strong>Key Results:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EKF positional RMSE</td>
+<td>4.14 cm</td>
+</tr>
+<tr>
+<td>EKF correction acceptance rate</td>
+<td>88.2%</td>
+</tr>
+<tr>
+<td>PF convergence from unknown pose</td>
+<td>&lt; 1 s</td>
+</tr>
+<tr>
+<td>PF steady-state position spread (σ)</td>
+<td>0.27 cm</td>
+</tr>
+<tr>
+<td>PF heading spread (σ)</td>
+<td>0.90°</td>
+</tr>
+<tr>
+<td>PF recovery from 1 m / 90° error</td>
+<td>0.63 s</td>
+</tr>
+</tbody>
+</table>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+<a href="https://www.python.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.python.org/');">Python</a>
+
+        
+        
+        
+          |
+        
+              
+        
+          
+C
+
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://opencv.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fopencv.org/');">OpenCV</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://numpy.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fnumpy.org/');">NumPy</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          State Estimation
+        
+        
+        
+          |
+        
+              
+        
+          Motion Planning
+        
+        
+        
+          |
+        
+              
+        
+          Control Systems
+        
+        
+        
+      
+    </p>
+
+    
+      <p>
+        <a href="https://github.com/imaginelenses/NYU_ROB_GY_6213" target="_blank">...view source code.</a>
+      </p>
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">3D Line-of-Sight Audit System for Intersections<a id="3d-line-of-sight-audit-system-for-intersections" href="#3d-line-of-sight-audit-system-for-intersections" role="button" aria-label="Link to 3D Line-of-Sight Audit System for Intersections."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Dec 2025</div>
+      </div>
+    </h2>
+    
+    <p>A multi-camera 3D visibility analysis system developed as a group project, designed to audit pedestrian and vehicle sightlines at urban intersections and detect occlusions before they cause accidents.</p>
+<div>
+<picture><source type="image/webp" srcset="/media/gaussian-1000w.webp 1000w, /media/gaussian-1500w.webp 1500w" sizes="100vw"><source type="image/jpeg" srcset="/media/gaussian-1000w.jpeg 1000w, /media/gaussian-1500w.jpeg 1500w" sizes="100vw"><img src="/media/gaussian-1000w.jpeg" width="1500" height="612" alt="gaussian" class="fullWidth" data-index="" ></picture>
+</div>
+<p>My primary contribution was the 3D reconstruction pipeline: eight calibrated cameras at 30 FPS stream frames over UDP to a central pipeline, reconstructing a 1.34-million-point 3D point cloud of the intersection using Structure-from-Motion and 3D Gaussian Splatting. The team's broader system layers YOLOv8 with ByteTrack on top for per-camera detection and consistent object IDs across frames. Visibility rays are cast through the point cloud for each tracked agent, and per-frame line-of-sight scores are aggregated into a spatial heatmap of occlusion risk.</p>
+<p><strong>Key Results:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Point cloud size</td>
+<td>1.34 M points</td>
+</tr>
+<tr>
+<td>Detection precision</td>
+<td>&gt; 90 %</td>
+</tr>
+<tr>
+<td>Detection recall</td>
+<td>&gt; 85 %</td>
+</tr>
+<tr>
+<td>Mean visibility score</td>
+<td>0.973</td>
+</tr>
+<tr>
+<td>Earlier hazard detection vs. 2D baseline</td>
+<td>~12.2 s</td>
+</tr>
+<tr>
+<td>Camera count / frame rate</td>
+<td>8 cameras @ 30 FPS</td>
+</tr>
+</tbody>
+</table>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+<a href="https://www.python.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.python.org/');">Python</a>
+
+        
+        
+        
+          |
+        
+              
+        
+          C++
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://docs.ultralytics.com/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fdocs.ultralytics.com/');">YOLOv8</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://github.com/ifzhang/ByteTrack" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fgithub.com/');">ByteTrack</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://www.open3d.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.open3d.org/');">Open3D</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Frepo-sam.inria.fr/');">Gaussian Splatting</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://colmap.github.io/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fcolmap.github.io/');">SfM</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fdocs.opencv.org/');">ArUco</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://opencv.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fopencv.org/');">OpenCV</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          UDP
+        
+        
+        
+      
+    </p>
+
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">RL Locomotion & Trajectory Optimization<a id="rl-locomotion-and-trajectory-optimization" href="#rl-locomotion-and-trajectory-optimization" role="button" aria-label="Link to RL Locomotion & Trajectory Optimization."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Dec 2024</div>
+      </div>
+    </h2>
+    
+    <p>Trained a Proximal Policy Optimization (PPO) agent in a custom Gymnasium simulation environment for continuous locomotion tasks, benchmarked against Sequential Quadratic Programming (SQP) trajectory optimization.</p>
+<p>A custom Gymnasium environment was built to simulate the robot dynamics, reward shaping, and episode resets. The PPO agent was trained with Stable-Baselines3 using entropy regularization and clipped surrogate objectives. Performance was compared against an SQP-based trajectory planner operating on the same dynamics model, evaluating task completion rate, energy efficiency, and generalization to perturbed initial conditions.</p>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+<a href="https://www.python.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.python.org/');">Python</a>
+
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://stable-baselines3.readthedocs.io/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fstable-baselines3.readthedocs.io/');">Stable-Baselines3</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://gymnasium.farama.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fgymnasium.farama.org/');">Gymnasium</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://numpy.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fnumpy.org/');">NumPy</a>
+          
+        
+        
+        
+      
+    </p>
+
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">Smart Switch - Smart Home Device<a id="smart-switch-smart-home-device" href="#smart-switch-smart-home-device" role="button" aria-label="Link to Smart Switch - Smart Home Device."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Aug 2023</div>
+      </div>
+    </h2>
+    
+    <p>A custom ESP32-based smart switch that integrates with Home Assistant over local LAN, replacing cloud-dependent commercial switches to eliminate latency and privacy concerns.</p>
+<p>The firmware runs on the ESP32 and communicates over the local network using the Home Assistant WebSocket API. By keeping all traffic on the LAN, the switch responds in under 1 ms — compared to 80–200 ms round-trip through cloud APIs. The Home Assistant integration is configured via YAML and exposed as a standard <code>switch</code> entity. A small JavaScript dashboard was built for direct browser-based control without Home Assistant.</p>
+<p><strong>Key Results:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LAN round-trip latency</td>
+<td>&lt; 1 ms</td>
+</tr>
+<tr>
+<td>Cloud API latency (replaced)</td>
+<td>80–200 ms</td>
+</tr>
+<tr>
+<td>Units deployed</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+            <a href="https://www.espressif.com/en/products/socs/esp32" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.espressif.com/');">ESP32</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://www.home-assistant.io/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.home-assistant.io/');">Home Assistant</a>
+          
+        
+        
+        
+          |
+        
+              
+        
+          YAML
+        
+        
+        
+          |
+        
+              
+        
+          JavaScript
+        
+        
+        
+      
+    </p>
+
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">Blendit (Blender + Git)<a id="blendit-blender-git" href="#blendit-blender-git" role="button" aria-label="Link to Blendit (Blender + Git)."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a><span class="projectBadge"><a class="github-button" href="https://github.com/imaginelenses/blendit" data-icon="octicon-star" data-show-count="true" aria-label="Star imaginelenses/blendit on GitHub">Star</a></span></div>
+        <div class="date">Aug 2022 - Sep 2022</div>
+      </div>
+    </h2>
+    
+    <p><a href="https://blendit.imaginelenses.com/" target="_blank">Blendit</a> (Blender + Git) - A Git integration that brings Version Control to Blender.</p>
+<div>
+<picture><source type="image/webp" srcset="/media/splash-1000w.webp 1000w" sizes="100vw"><source type="image/jpeg" srcset="/media/splash-1000w.jpeg 1000w" sizes="100vw"><img src="/media/splash-1000w.jpeg" width="1000" height="500" alt="splash" class="fullWidth" data-index="" ></picture>
+</div>
+<p>While Git and other Version Control Systems (VCS) can track <code>.blend</code> (binary) files it does not make much sense as they are designed for textual files.</p>
+<p>That said, according to <a href="https://twitter.com/sastuvel" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com/');">Sybren</a> on <a href="https://blender.stackexchange.com/a/108186/154740" target="_blank">Blender Stack Exchange</a>, Blender Institute uses <a href="https://subversion.apache.org/" target="_blank">Subversion</a>.</p>
+<blockquote>
+At the Blender Institute / Blender Animation Studio we use Subversion for our projects. It works fine for blend files, but you have to make sure they are not compressed. Compression can cause the entire file to be different when only a single byte changed, whereas in the uncompressed blend file only that one byte will differ. As a result, binary diffs will be much smaller, and your repository will be faster to work with.
+</blockquote>
+<h4>How does Blendit work?</h4>
+<p>Instead of tracking the <code>.blend</code> (binary) files itself, Blendit tracks the <em>changes</em> you make to the <code>.blend</code> file in real time. It does so by keeping track of the python commands, from the Blender API.</p>
+<p>Each time you open a Blendit project, it regenerates the <code>.blend</code> files. This means you can delete the <code>.blend</code> file and still retain the project.</p>
+<p>This way we only track a textual (<code>.py</code>) file as Git was intended to be used.</p>
+<p>In theory the size of the entire project should be lower than using any other VSC.</p>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+<a href="https://www.python.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.python.org/');">Python</a>
+
+        
+        
+        
+          |
+        
+              
+        
+          pygit2
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://docs.blender.org/api/current/index.html" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fdocs.blender.org/');">Blender API</a>
+          
+            <a href="https://git-scm.com/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fgit-scm.com/');">Git</a>
+          
+        
+        
+        
+      
+    </p>
+
+    
+      <p>
+        <a href="https://github.com/imaginelenses/blendit" target="_blank">...view source code.</a>
+      </p>
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">Enigma - Enigma Machine Emulator<a id="enigma-enigma-machine-emulator" href="#enigma-enigma-machine-emulator" role="button" aria-label="Link to Enigma - Enigma Machine Emulator."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Jun 2022</div>
+      </div>
+    </h2>
+    
+    <div class="iframeContainer">
+<iframe src="https://imaginelenses.com/enigma/" frameborder="0" title="Enigma Machine Emulator" autofocus></iframe>
+</div>
+<p><a href="https://imaginelenses.com/enigma/" target="_blank">Enigma</a>, the <a href="https://en.wikipedia.org/wiki/Enigma_machine" target="_blank">Enigma Machine</a> Emulator.</p>
+<p>The Enigma machine is a <a href="https://en.wikipedia.org/wiki/Cryptography" target="_blank">cryptographic device</a> developed and used in the early-to-mid 20th century by Nazi Germany during World War II. The Enigma machine was considered impossible to crack the code that it was used to encipher the most top-secret messages.</p>
+<p>However, <a href="https://en.wikipedia.org/wiki/Alan_Turing" target="_blank">Alan Turing</a>, the father of theoretical computer science and AI, built a machine to crack the code. The British kept this a secret for nearly 30 years after the war. There is a great movie about the entire story called <em>The Imitation Game</em>.</p>
+<div class="fullWidth">
+<lite-youtube videoid="DZ6gI2CJM4c" style="background-image: url('https://i.ytimg.com/vi/DZ6gI2CJM4c/maxresdefault.jpg'); max-width: unset !important;"><button type="button" class="lty-playbtn"><span class="lyt-visually-hidden">Play Video: The Imitation Game</span></button></lite-youtube>
+</div>
+<p>Watch this movie if you've ever wondered why there are 12 'E' tiles in game <a href="https://en.wikipedia.org/wiki/Scrabble" target="_blank">Scrabble</a>!</p>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+<a href="https://reactjs.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Freactjs.org/');">React</a> (JavaScript)
+
+        
+        
+        
+          |
+        
+              
+        
+          
+<img class="techIcon html5" alt="HTML5 Logo" title="HTML5 Logo" src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png">HTML5/CSS
+
+        
+        
+        
+      
+    </p>
+
+    
+      <p>
+        <a href="https://github.com/imaginelenses/enigma" target="_blank">...view source code.</a>
+      </p>
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">Seam Carving - Content Aware Resizing<a id="seam-carving-content-aware-resizing" href="#seam-carving-content-aware-resizing" role="button" aria-label="Link to Seam Carving - Content Aware Resizing."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Apr 2022 - May 2022</div>
+      </div>
+    </h2>
+    
+    <p>Content Aware Resizing - An application of Seam Carving.</p>
+<p><a href="https://en.wikipedia.org/wiki/Seam_carving" target="_blank">Seam Carving</a> is an algorithm for content-aware image resizing.</p>
+<p>It functions by establishing a number of seams (paths of least importance) in an image and automatically removes seams to reduce image size or inserts seams to extend it.</p>
+<p>This is an implementation of the algorithm in Python - Jupyter Notebook, which tends to be pretty slow. However a faster implementation can be achieved using <a href="https://julialang.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fjulialang.org/');">Julia</a>.</p>
+<p><a href="https://twitter.com/3blue1brown" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ftwitter.com/');">Grant Sanderson</a> from the <a href="https://www.youtube.com/@3blue1brown" target="_blank">YouTube channel</a> <a href="https://www.3blue1brown.com/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.3blue1brown.com/');">3Blue1Brown</a> has given a <a href="https://youtu.be/rpB6zQNsbQU" target="_blank" rel="noopener noreferrer">great lecture</a> demonstrating just that!</p>
+<div class="fullWidth">
+<lite-youtube videoid="rpB6zQNsbQU" style="background-image: url('https://i.ytimg.com/vi/rpB6zQNsbQU/maxresdefault.jpg'); max-width: unset !important;"><button type="button" class="lty-playbtn"><span class="lyt-visually-hidden">Play Video: Seam Carving | Week 2 | 18.S191 MIT Fall 2020 | Grant Sanderson</span></button></lite-youtube>
+</div>
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+<a href="https://www.python.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.python.org/');">Python</a>
+
+        
+        
+        
+      
+    </p>
+
+    
+      <p>
+        <a href="https://github.com/imaginelenses/seamCarving" target="_blank">...view source code.</a>
+      </p>
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">Transform - Image Processing Tool<a id="transform-image-processing-tool" href="#transform-image-processing-tool" role="button" aria-label="Link to Transform - Image Processing Tool."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Jan 2022 - Feb 2022</div>
+      </div>
+    </h2>
+    
+    <p>A basic command-line, image processing script for <a href="https://en.wikipedia.org/wiki/BMP_file_format" target="_blank">Bitmap images</a> written from scratch in C.</p>
+<h4>Usage:</h4>
+<pre class="language-html"><code class="language-html">./transform [options] <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">file</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>output</span> <span class="token attr-name">file</span><span class="token punctuation">></span></span></code></pre>
+<p><a href="https://github.com/imaginelenses/transform/blob/main/README.md#options" target="_blank">List of options.</a></p>
+<h4>Support:</h4>
+<ul>
+<li>
+<h4>Supports BMP v3, BMP v4 and BMP v5.</h4>
+</li>
+<li>
+<h4>Supports 24-bit and 32-bit bitmap images.</h4>
+</li>
+<li>
+<h4>Does not support color palettes.</h4>
+</li>
+<li>
+<h4>Does not support compression.</h4>
+</li>
+</ul>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+C
+
+        
+        
+        
+      
+    </p>
+
+    
+      <p>
+        <a href="https://github.com/imaginelenses/transform" target="_blank">...view source code.</a>
+      </p>
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">Kalman Mobile & Kalman Desktop<a id="kalman-mobile-and-kalman-desktop" href="#kalman-mobile-and-kalman-desktop" role="button" aria-label="Link to Kalman Mobile & Kalman Desktop."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Dec 2021 - Jan 2022</div>
+      </div>
+    </h2>
+    
+    <p>A tool to implement and understand <a href="https://en.wikipedia.org/wiki/Kalman_filter" target="_blank">Kalman filters</a> - Kalman Mobile along with Kalman Desktop is a
+Server-Client pair. Kalman Mobile, a mobile application, reads the accelerometer readings from an
+Android device and sends them over to Kalman Desktop, a desktop application, over websockets.
+Kalman Desktop then moves the cursor on the screen according to the change in acceleration of the
+mobile device.</p>
+<p><a href="https://www.kalmanfilter.net/default.aspx" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.kalmanfilter.net/');">Kalmanfilter.net</a> is a great place to learn about Kalman filters.</p>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+<a href="https://www.java.com/en/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.java.com/');">Java</a>
+
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://socket.io/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fsocket.io/');">Socket.IO</a>
+          
+        
+        
+        
+      
+    </p>
+
+    
+      <p>
+        <a href="https://github.com/imaginelenses/kalmanMobile" target="_blank">...view source code.</a>
+      </p>
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">Bachelor's Project<a id="bachelor-s-project" href="#bachelor-s-project" role="button" aria-label="Link to Bachelor's Project."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Sep 2021 - Aug 2022</div>
+      </div>
+    </h2>
+    
+    <p>For the capstone project of my bachelor's degree, I lead a small team to work on dynamical systems.</p>
+<blockquote>
+Development of a purely <a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit" target="_blank">IMU</a> based two body relative positional tracking system implemented as a stylus compatible with supported touchscreen and non-touchscreen devices alike.
+</blockquote>
+<p>I wanted to develop an <a href="https://en.wikipedia.org/wiki/Active_pen" target="_blank">Active Stylus</a> that is cross-compatible with most devices as the ones available today are designed to work only with certain devices, for instance, Apple pencil works only with iPads and Samsung sPen works only with Samsung devices. This is so because of the use of different types of digitizers in different devices. To overcome this I had to reimagine an Active Stylus that normally worked with the help of a digitizer and design a stylus that did not need one. Crazy enough, this way, the Active Stylus would also be compatible with non-touchscreen devices!</p>
+<p>This Active Stylus works by tracking its position in space with respect to the device, which is made possible by a 9-DOF IMU. As these sensors are very noisy we use <a href="https://en.wikipedia.org/wiki/Kalman_filter" target="_blank">Kalman filters</a>, a <a href="https://en.wikipedia.org/wiki/Data_assimilation" target="_blank">data assimilation</a> technique, to try to achieve precision and accuracy. With all the sensors on-board and no stationary beacon we must heavily rely on the mathematical model. Thereby we are conducting research on designing an accurate model that is also computationally inexpensive to simulate.</p>
+<p>However, calculating the position of the stylus with respect to the device is only half the problem as the device is also free to move around. Therefore we have to start with both, device and stylus, at the same point in space and then proceed to calculate their relative position. We are developing algorithms to do this in real time with virtually no latency.</p>
+<p>All of the experimentation required is done without using any microcontrollers. This is made possible by designing the experiments unconventionally and exploiting the sensors in our smartphones. I have developed open-source software that acts as a testbed where all processes are automated. This enables easy and rapid testing.</p>
+<h4>Team:</h4>
+<ul>
+<li>
+<h4><a href="https://www.linkedin.com/in/vidhyasagar-g-m-a86477210/" target="_blank">Vidhyasagar G M</a></h4>
+</li>
+<li>
+<h4><a href="https://www.linkedin.com/in/omkar-pillutla/" target="_blank">Omkar Pillutla</a></h4>
+</li>
+</ul>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+<a href="https://www.java.com/en/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.java.com/');">Java</a>
+
+        
+        
+        
+          |
+        
+              
+        
+          
+C
+
+        
+        
+        
+          |
+        
+              
+        
+          
+<a href="https://www.python.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.python.org/');">Python</a>
+
+        
+        
+        
+          |
+        
+              
+        
+          
+<a href="https://reactnative.dev/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Freactnative.dev/');">React Native</a> (JavaScript)
+
+        
+        
+        
+          |
+        
+              
+        
+          
+            <a href="https://socket.io/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fsocket.io/');">Socket.IO</a>
+          
+        
+        
+        
+      
+    </p>
+
+    
+
+    <br>
+  
+    <h2>
+      <div class="projectTitleContainer">
+        <div class="projectTitle">OneProjectFile - Version Control for Creative Professionals<a id="oneprojectfile-version-control-for-creative-professionals" href="#oneprojectfile-version-control-for-creative-professionals" role="button" aria-label="Link to OneProjectFile - Version Control for Creative Professionals."><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></a></div>
+        <div class="date">Dec 2020 - Feb 2021</div>
+      </div>
+    </h2>
+    
+    <p><a href="https://oneprojectfile.imaginelenses.com/docs" target="_blank">OneProjectFile</a> -  Version Control for Creative Professionals</p>
+<div>
+<img src="https://oneprojectfile.imaginelenses.com/images/project.jpg" alt="" class="fullWidth" decoding="async" loading="lazy">
+</div>
+<p>A version control software gives you the ability to store all versions of your file in a single place and not worry about filenames and origanisation. Think of it like having just one file stand to store all versions of your file!</p>
+<p>Version control has been standard practice in software development to keep track of changes to code for years now. However, when it comes to working with files other than textual files you usually out of luck.</p>
+<p>OneProjectFile aims to bring basic version control functionality to a wide range of filetypes. And this is achieved by storing all the files in the user's Google Drive.</p>
+
+
+    <br>
+    <p>
+      <strong>Tech Stack:</strong>&nbsp;
+      
+              
+        
+          
+<a href="https://flask.palletsprojects.com/en/2.2.x/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fflask.palletsprojects.com/');">Flask</a> (
+<a href="https://www.python.org/" target="_blank" style="--icon: url('https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.python.org/');">Python</a>
+)
+
+        
+        
+        
+          |
+        
+              
+        
+          JavaScript
+        
+        
+        
+          |
+        
+              
+        
+          SQLite
+        
+        
+        
+          |
+        
+              
+        
+          
+<img class="techIcon html5" alt="HTML5 Logo" title="HTML5 Logo" src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png">HTML5/CSS
+
+        
+        
+        
+      
+    </p>
+
+    
+      <p>
+        <a href="https://github.com/imaginelenses/oneprojectfile" target="_blank">...view source code.</a>
+      </p>
+    
+
+    <br>
+  
+
+</div>
+
+<link rel="stylesheet" href="/css/lite-yt-embed.css">
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script async defer src="/js/lite-yt-embed.js"></script>
+
+    
+  </main>
+
+
+  <button id="scrollDown" type="button" aria-label="Scroll down or to top">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+      <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+    </svg>
+  </button>
+  <footer>
+
+    <div class="social">
+      <a href="https://github.com/imaginelenses" target="_blank" role="button" aria-label="Checkout my GitHub.">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.youtube.com/@imaginelenses" target="_blank" role="button" aria-label="Checkout my YouTube channel.">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+          <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.linkedin.com/in/imaginelenses/" target="_blank" role="button" aria-label="Checkout my LinkedIn page.">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+        </svg>
+      </a>
+    </div>
+    
+    <div>&#169; 2026 &nbsp;|&nbsp; Karthik Shivashankaran &nbsp;|&nbsp; Imaginelenses</div>
+    <div>Brooklyn, NY &nbsp;|&nbsp; Open to Opportunities</div>
+  </footer>
+
+  <script src="/js/copy.js"></script>
+  <script src="/js/scroll.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+</body>
+
+</html>
