@@ -115,3 +115,5 @@ gaussian (2).png:Zone.Identifier
 # LaTeX build artifacts
 cv.fdb_latexmk
 cv.fls
+
+.DS_Store
